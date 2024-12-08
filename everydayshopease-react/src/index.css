@@ -4,35 +4,35 @@
 
 body {
   margin: 0;
-  font-family: "SCDream";
+  font-family: "money";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 @font-face {
-  font-family: "SCDream";
+  font-family: "money";
   font-style: normal;
   font-weight: 200;
-  src: url(assets/fonts/SCDream2.otf);
+  src: url(assets/fonts/Moneygraphy-Rounded.ttf);
 }
 
 @font-face {
-  font-family: "SCDream";
+  font-family: "money";
   font-style: normal;
   font-weight: 300;
-  src: url(assets/fonts/SCDream4.otf);
+  src: url(assets/fonts/Moneygraphy-Rounded.ttf);
 }
 
 @font-face {
-  font-family: "SCDream";
+  font-family: "money";
   font-style: normal;
   font-weight: 400;
-  src: url(assets/fonts/SCDream5.otf);
+  src: url(assets/fonts/Moneygraphy-Rounded.ttf);
 }
 
 @font-face {
-  font-family: "SCDream";
+  font-family: "money";
   font-style: normal;
   font-weight: 700;
-  src: url(assets/fonts/SCDream6.otf);
+  src: url(assets/fonts/Moneygraphy-Rounded.ttf);
 }
