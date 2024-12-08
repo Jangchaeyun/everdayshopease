@@ -1,12 +1,12 @@
-import "./App.css";
+import React from "react";
 import Navigation from "./components/Navigation/Navigation";
 
-function App() {
+const Shop = () => {
   return (
-    <div className="App">
+    <>
       <Navigation />
-    </div>
+    </>
   );
-}
+};
 
-export default App;
+export default Shop;

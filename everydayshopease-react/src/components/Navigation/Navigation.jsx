@@ -1,5 +1,7 @@
 import React from "react";
 import Wishlist from "../common/Wishlist";
+import AccountIcon from "../common/AccountIcon";
+import CartIcon from "../common/CartIcon";
 
 const Navigation = () => {
   return (
@@ -49,14 +51,22 @@ const Navigation = () => {
       </div>
       <div className="flex flex-wrap items-center gap-4">
         {/* Action Items - icons */}
-        <ul className="flex items-center gap-8">
+        <ul className="flex gap-8">
           <li>
             <button>
               <Wishlist />
             </button>
           </li>
-          <li>Icon2</li>
-          <li>Icon3</li>
+          <li>
+            <button>
+              <AccountIcon />
+            </button>
+          </li>
+          <li>
+            <a href="/cart-items">
+              <CartIcon />
+            </a>
+          </li>
         </ul>
       </div>
     </nav>

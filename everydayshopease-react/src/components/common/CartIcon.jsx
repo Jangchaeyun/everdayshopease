@@ -1,6 +1,6 @@
 import React from "react";
 
-const Wishlist = () => {
+const CartIcon = () => {
   return (
     <svg
       className="hover:fill-black w-[44px] h-[44px] text-gray-800"
@@ -16,10 +16,10 @@ const Wishlist = () => {
         stroke-linecap="round"
         stroke-linejoin="round"
         stroke-width="1"
-        d="M12.01 6.001C6.5 1 1 8 5.782 13.001L12.011 20l6.23-7C23 8 17.5 1 12.01 6.002Z"
+        d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"
       />
     </svg>
   );
 };
 
-export default Wishlist;
+export default CartIcon;

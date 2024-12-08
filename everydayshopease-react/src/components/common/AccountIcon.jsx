@@ -1,9 +1,9 @@
 import React from "react";
 
-const Wishlist = () => {
+const AccountIcon = () => {
   return (
     <svg
-      className="hover:fill-black w-[44px] h-[44px] text-gray-800"
+      className="hover:fill-black w-[47px] h-[44px] text-gray-800"
       aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
@@ -13,13 +13,11 @@ const Wishlist = () => {
     >
       <path
         stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
         stroke-width="1"
-        d="M12.01 6.001C6.5 1 1 8 5.782 13.001L12.011 20l6.23-7C23 8 17.5 1 12.01 6.002Z"
+        d="M7 17v1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3Zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
       />
     </svg>
   );
 };
 
-export default Wishlist;
+export default AccountIcon;
