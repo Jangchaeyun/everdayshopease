@@ -1,4 +1,7 @@
 import React from "react";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import "../Sections/NewArrivals.css";
 import SectionHeading from "./SectionHeading/SectionHeading";
 import Card from "../Card/Card";
 import Jeans from "../../assets/img/jeans.png";
@@ -7,6 +10,7 @@ import Shirts from "../../assets/img/shirts.png";
 import Tshirt from "../../assets/img/tshirts.png";
 import Joggers from "../../assets/img/joggers.png";
 import Accessory from "../../assets/img/accessory.png";
+import { responsive } from "../../utils/Section.constants";
 
 const items = [
   {
@@ -39,16 +43,22 @@ const NewArrivals = () => {
   return (
     <>
       <SectionHeading title={"신상"} />
-      <div className="flex flex-wrap">
+      <Carousel
+        responsive={responsive}
+        autoPlay={false}
+        swipeable={true}
+        draggable={false}
+        showDots={false}
+        infinite={false}
+        partialVisbile={false}
+        itemClass={"react-slider-custom-item"}
+        className="px-8"
+      >
         {items &&
-          items?.map((item, index) => (
-            <Card
-              key={item}
-              title={item?.title + index}
-              imagePath={item.imagePath}
-            />
+          items?.map((item) => (
+            <Card key={item} title={item?.title} imagePath={item.imagePath} />
           ))}
-      </div>
+      </Carousel>
     </>
   );
 };

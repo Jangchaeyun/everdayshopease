@@ -1,0 +1,24 @@
+{
+  "categories": [
+    {
+      "title": "여성",
+      "data": [
+        {
+          "title": "원피스/스커트",
+          "description": "바로 알아보기",
+          "image": "../images/category-women-skirt.png"
+        }
+      ]
+    },
+    {
+      "title": "여성",
+      "data": [
+        {
+          "title": "원피스/스커트",
+          "description": "바로 알아보기",
+          "image": "../images/category-women-skirt.png"
+        }
+      ]
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Card = ({ imagePath, title }) => {
+const Card = ({ imagePath, title, description, actionArrow }) => {
   return (
     <div className="flex flex-col p-6">
       <img
@@ -10,7 +10,13 @@ const Card = ({ imagePath, title }) => {
         width={"420px"}
         alt="Jeans"
       />
-      <p className="text-[16px] p-[5px]">{title}</p>
+      <div className="flex justify-between">
+        <div className="flex flex-col">
+          <p className="text-[16px] p-2">{title}</p>
+          {description && <p className="text-[14px]">{description}</p>}
+        </div>
+        {actionArrow && <div></div>}
+      </div>
     </div>
   );
 };
