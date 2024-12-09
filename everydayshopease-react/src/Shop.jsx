@@ -11,10 +11,10 @@ const Shop = () => {
       <Navigation />
       <HeroSection />
       <NewArrivals />
-      <Category
-        title={content?.categories[0]?.title}
-        data={content?.categories[0]?.data}
-      />
+      {content?.categories &&
+        content?.categories?.map((item, index) => (
+          <Category key={item?.title + index} {...item} />
+        ))}
     </>
   );
 };

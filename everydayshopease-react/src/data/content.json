@@ -7,16 +7,81 @@
           "title": "원피스/스커트",
           "description": "바로 알아보기",
           "image": "../images/category-women-skirt.png"
+        },
+        {
+          "title": "신발",
+          "description": "바로 알아보기",
+          "image": "../images/category-women-shoes.png"
+        },
+        {
+          "title": "아우터",
+          "description": "바로 알아보기",
+          "image": "../images/category-women-outer.png"
+        },
+        {
+          "title": "상의",
+          "description": "바로 알아보기",
+          "image": "../images/category-women-top.png"
+        },
+        {
+          "title": "바지",
+          "description": "바로 알아보기",
+          "image": "../images/category-women-pants.png"
+        },
+        {
+          "title": "가방",
+          "description": "바로 알아보기",
+          "image": "../images/category-women-bags.png"
+        },
+        {
+          "title": "속옷",
+          "description": "바로 알아보기",
+          "image": "../images/category-women-underwares.png"
+        },
+        {
+          "title": "뷰티",
+          "description": "바로 알아보기",
+          "image": "../images/category-women-beauty.png"
         }
       ]
     },
     {
-      "title": "여성",
+      "title": "남성",
       "data": [
         {
-          "title": "원피스/스커트",
+          "title": "신발",
           "description": "바로 알아보기",
-          "image": "../images/category-women-skirt.png"
+          "image": "../images/category-men-shoes.png"
+        },
+        {
+          "title": "아우터",
+          "description": "바로 알아보기",
+          "image": "../images/category-men-outer.png"
+        },
+        {
+          "title": "상의",
+          "description": "바로 알아보기",
+          "image": "../images/category-men-top.png"
+        },
+        {
+          "title": "바지",
+          "description": "바로 알아보기",
+          "image": "../images/category-men-pants.png"
+        },
+        {
+          "title": "가방",
+          "description": "바로 알아보기",
+          "image": "../images/category-men-bag.png"
+        },
+        {
+          "title": "속옷",
+          "description": "바로 알아보기",
+          "image": "../images/category-men-underwares.png"
+        },
+        {
+          "title": "뷰티",
+          "description": "바로 알아보기",
+          "image": "../images/category-men-beauty.png"
         }
       ]
     }

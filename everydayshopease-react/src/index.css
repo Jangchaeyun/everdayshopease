@@ -4,35 +4,35 @@
 
 body {
   margin: 0;
-  font-family: "money";
+  font-family: "kyobo";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 @font-face {
-  font-family: "money";
+  font-family: "kyobo";
   font-style: normal;
   font-weight: 200;
-  src: url(assets/fonts/Moneygraphy-Rounded.ttf);
+  src: url(assets/fonts/KyoboHandwriting2019.ttf);
 }
 
 @font-face {
-  font-family: "money";
+  font-family: "kyobo";
   font-style: normal;
   font-weight: 300;
-  src: url(assets/fonts/Moneygraphy-Rounded.ttf);
+  src: url(assets/fonts/KyoboHandwriting2019.ttf);
 }
 
 @font-face {
-  font-family: "money";
+  font-family: "kyobo";
   font-style: normal;
   font-weight: 400;
-  src: url(assets/fonts/Moneygraphy-Rounded.ttf);
+  src: url(assets/fonts/KyoboHandwriting2019.ttf);
 }
 
 @font-face {
-  font-family: "money";
+  font-family: "kyobo";
   font-style: normal;
   font-weight: 700;
-  src: url(assets/fonts/Moneygraphy-Rounded.ttf);
+  src: url(assets/fonts/KyoboHandwriting2019.ttf);
 }
