@@ -2,6 +2,7 @@ import React from "react";
 import Wishlist from "../common/Wishlist";
 import AccountIcon from "../common/AccountIcon";
 import CartIcon from "../common/CartIcon";
+import { Link, NavLink } from "react-router-dom";
 
 const Navigation = () => {
   return (
@@ -16,16 +17,16 @@ const Navigation = () => {
         {/* Nav items */}
         <ul className="flex gap-14 text-gray-600">
           <li className="text-gray-600 hover:text-black">
-            <a href="/">쇼핑</a>
+            <NavLink href="/">쇼핑</NavLink>
           </li>
           <li className="text-gray-600 hover:text-black">
-            <a href="/mens">남성</a>
+            <NavLink href="/mens">남성</NavLink>
           </li>
           <li className="text-gray-600 hover:text-black">
-            <a href="/womens">여성</a>
+            <NavLink to="/womens">여성</NavLink>
           </li>
           <li className="text-gray-600 hover:text-black">
-            <a href="/kids">키즈</a>
+            <NavLink href="/kids">키즈</NavLink>
           </li>
         </ul>
       </div>
@@ -63,9 +64,9 @@ const Navigation = () => {
             </button>
           </li>
           <li>
-            <a href="/cart-items">
+            <Link to="/cart-items">
               <CartIcon />
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
