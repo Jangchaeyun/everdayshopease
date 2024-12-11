@@ -3,6 +3,7 @@ import Wishlist from "../common/Wishlist";
 import AccountIcon from "../common/AccountIcon";
 import CartIcon from "../common/CartIcon";
 import { Link, NavLink } from "react-router-dom";
+import "../Navigation/Navigation.css";
 
 const Navigation = () => {
   return (
@@ -17,16 +18,36 @@ const Navigation = () => {
         {/* Nav items */}
         <ul className="flex gap-14 text-gray-600">
           <li className="text-gray-600 hover:text-black">
-            <NavLink href="/">쇼핑</NavLink>
+            <NavLink
+              href="/"
+              className={({ isActive }) => (isActive ? "active-link" : "")}
+            >
+              쇼핑
+            </NavLink>
           </li>
           <li className="text-gray-600 hover:text-black">
-            <NavLink href="/mens">남성</NavLink>
+            <NavLink
+              href="/men"
+              className={({ isActive }) => (isActive ? "active-link" : "")}
+            >
+              남성
+            </NavLink>
           </li>
           <li className="text-gray-600 hover:text-black">
-            <NavLink to="/womens">여성</NavLink>
+            <NavLink
+              to="/women"
+              className={({ isActive }) => (isActive ? "active-link" : "")}
+            >
+              여성
+            </NavLink>
           </li>
           <li className="text-gray-600 hover:text-black">
-            <NavLink href="/kids">키즈</NavLink>
+            <NavLink
+              href="/kid"
+              className={({ isActive }) => (isActive ? "active-link" : "")}
+            >
+              키즈
+            </NavLink>
           </li>
         </ul>
       </div>

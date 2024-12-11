@@ -3,7 +3,7 @@ import React from "react";
 const AccountIcon = () => {
   return (
     <svg
-      className="hover:fill-black w-[47px] h-[44px] text-gray-800"
+      className="hover:fill-black h-8 w-8 text-gray-800"
       aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
       width="24"

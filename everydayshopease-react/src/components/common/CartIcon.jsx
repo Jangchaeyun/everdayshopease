@@ -3,7 +3,7 @@ import React from "react";
 const CartIcon = () => {
   return (
     <svg
-      className="hover:fill-black w-[44px] h-[44px] text-gray-800"
+      className="h-8 w-8 hover:fill-black text-gray-800"
       aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
       width="24"

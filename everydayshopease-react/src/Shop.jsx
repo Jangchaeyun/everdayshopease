@@ -1,5 +1,4 @@
 import React from "react";
-import Navigation from "./components/Navigation/Navigation";
 import HeroSection from "./components/HeroSection/HeroSection";
 import NewArrivals from "./components/Sections/NewArrivals";
 import content from "./data/content.json";
@@ -9,7 +8,6 @@ import Footer from "./components/Footer/Footer";
 const Shop = () => {
   return (
     <>
-      <Navigation />
       <HeroSection />
       <NewArrivals />
       {content?.categories &&

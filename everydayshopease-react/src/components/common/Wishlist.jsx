@@ -3,7 +3,7 @@ import React from "react";
 const Wishlist = () => {
   return (
     <svg
-      className="hover:fill-black w-[44px] h-[44px] text-gray-800"
+      className="hover:fill-black w-8 h-8 text-gray-800"
       aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
       width="24"

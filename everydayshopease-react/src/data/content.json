@@ -1,91 +1,135 @@
 {
-  "categories": [
-    {
-      "title": "여성",
-      "data": [
+  "pages": {
+    "shop": {
+      "sections": [
         {
-          "title": "원피스/스커트",
-          "description": "바로 알아보기",
-          "image": "../images/category-women-skirt.png"
+          "title": "여성",
+          "data": [
+            {
+              "title": "원피스/스커트",
+              "description": "바로 알아보기",
+              "image": "../images/category-women-skirt.png"
+            },
+            {
+              "title": "신발",
+              "description": "바로 알아보기",
+              "image": "../images/category-women-shoes.png"
+            },
+            {
+              "title": "아우터",
+              "description": "바로 알아보기",
+              "image": "../images/category-women-outer.png"
+            },
+            {
+              "title": "상의",
+              "description": "바로 알아보기",
+              "image": "../images/category-women-top.png"
+            },
+            {
+              "title": "바지",
+              "description": "바로 알아보기",
+              "image": "../images/category-women-pants.png"
+            },
+            {
+              "title": "가방",
+              "description": "바로 알아보기",
+              "image": "../images/category-women-bags.png"
+            },
+            {
+              "title": "속옷",
+              "description": "바로 알아보기",
+              "image": "../images/category-women-underwares.png"
+            },
+            {
+              "title": "뷰티",
+              "description": "바로 알아보기",
+              "image": "../images/category-women-beauty.png"
+            }
+          ]
         },
         {
-          "title": "신발",
-          "description": "바로 알아보기",
-          "image": "../images/category-women-shoes.png"
+          "title": "남성",
+          "data": [
+            {
+              "title": "신발",
+              "description": "바로 알아보기",
+              "image": "../images/category-men-shoes.png"
+            },
+            {
+              "title": "아우터",
+              "description": "바로 알아보기",
+              "image": "../images/category-men-outer.png"
+            },
+            {
+              "title": "상의",
+              "description": "바로 알아보기",
+              "image": "../images/category-men-top.png"
+            },
+            {
+              "title": "바지",
+              "description": "바로 알아보기",
+              "image": "../images/category-men-pants.png"
+            },
+            {
+              "title": "가방",
+              "description": "바로 알아보기",
+              "image": "../images/category-men-bag.png"
+            },
+            {
+              "title": "속옷",
+              "description": "바로 알아보기",
+              "image": "../images/category-men-underwares.png"
+            },
+            {
+              "title": "뷰티",
+              "description": "바로 알아보기",
+              "image": "../images/category-men-beauty.png"
+            }
+          ]
         },
         {
-          "title": "아우터",
-          "description": "바로 알아보기",
-          "image": "../images/category-women-outer.png"
-        },
-        {
-          "title": "상의",
-          "description": "바로 알아보기",
-          "image": "../images/category-women-top.png"
-        },
-        {
-          "title": "바지",
-          "description": "바로 알아보기",
-          "image": "../images/category-women-pants.png"
-        },
-        {
-          "title": "가방",
-          "description": "바로 알아보기",
-          "image": "../images/category-women-bags.png"
-        },
-        {
-          "title": "속옷",
-          "description": "바로 알아보기",
-          "image": "../images/category-women-underwares.png"
-        },
-        {
-          "title": "뷰티",
-          "description": "바로 알아보기",
-          "image": "../images/category-women-beauty.png"
-        }
-      ]
-    },
-    {
-      "title": "남성",
-      "data": [
-        {
-          "title": "신발",
-          "description": "바로 알아보기",
-          "image": "../images/category-men-shoes.png"
-        },
-        {
-          "title": "아우터",
-          "description": "바로 알아보기",
-          "image": "../images/category-men-outer.png"
-        },
-        {
-          "title": "상의",
-          "description": "바로 알아보기",
-          "image": "../images/category-men-top.png"
-        },
-        {
-          "title": "바지",
-          "description": "바로 알아보기",
-          "image": "../images/category-men-pants.png"
-        },
-        {
-          "title": "가방",
-          "description": "바로 알아보기",
-          "image": "../images/category-men-bag.png"
-        },
-        {
-          "title": "속옷",
-          "description": "바로 알아보기",
-          "image": "../images/category-men-underwares.png"
-        },
-        {
-          "title": "뷰티",
-          "description": "바로 알아보기",
-          "image": "../images/category-men-beauty.png"
+          "title": "키즈",
+          "data": [
+            {
+              "title": "신발",
+              "description": "바로 알아보기",
+              "image": "../images/category-kids-shoes.png"
+            },
+            {
+              "title": "아우터",
+              "description": "바로 알아보기",
+              "image": "../images/category-kids-outer.png"
+            },
+            {
+              "title": "상의",
+              "description": "바로 알아보기",
+              "image": "../images/category-kids-top.png"
+            },
+            {
+              "title": "바지",
+              "description": "바로 알아보기",
+              "image": "../images/category-kids-pants.png"
+            },
+            {
+              "title": "가방",
+              "description": "바로 알아보기",
+              "image": "../images/category-kids-bag.png"
+            },
+            {
+              "title": "속옷",
+              "description": "바로 알아보기",
+              "image": "../images/category-kids-underwares.png"
+            },
+            {
+              "title": "모자",
+              "description": "바로 알아보기",
+              "image": "../images/category-kids-caps.png"
+            }
+          ]
         }
       ]
     }
-  ],
+  },
   "footer": {
     "items": [
       {
@@ -149,5 +193,394 @@
       }
     ],
     "copyright": "Copyright Ⓒ 2024 EveryDayShopease"
-  }
+  },
+  "categories": [
+    {
+      "id": 1,
+      "name": "남성",
+      "code": "MEN",
+      "path": "/men",
+      "description": "남성 제품",
+      "types": [
+        {
+          "id": 1,
+          "name": "신발",
+          "description": "남자 신발"
+        },
+        {
+          "id": 2,
+          "name": "아우터",
+          "description": "남자 아우터"
+        },
+        {
+          "id": 3,
+          "name": "상의",
+          "description": "남자 상의"
+        },
+        {
+          "id": 4,
+          "name": "바지",
+          "description": "남자 바지"
+        },
+        {
+          "id": 5,
+          "name": "가방",
+          "description": "남자 가방"
+        },
+        {
+          "id": 6,
+          "name": "속옷",
+          "description": "남자 속옷"
+        },
+        {
+          "id": 6,
+          "name": "뷰티",
+          "description": "남자 뷰티"
+        }
+      ],
+      "meta_data": {
+        "colors": [
+          "블랙",
+          "화이트",
+          "실버",
+          "라이트 그레이",
+          "그레이",
+          "다크 그레이",
+          "레드",
+          "딥레드",
+          "버건디",
+          "페일 핑크",
+          "라이트 핑크",
+          "핑크",
+          "다크 핑크",
+          "로즈골드",
+          "오렌지",
+          "아이보리",
+          "라이트 옐로우",
+          "옐로우",
+          "골드",
+          "라임",
+          "라이트 그린",
+          "그린",
+          "올리브 그린",
+          "카키",
+          "다크 그린",
+          "민트",
+          "스카이 블루",
+          "블루",
+          "네이비",
+          "다크  네이비",
+          "라벤더",
+          "퍼플",
+          "라이트 브리운",
+          "브라운",
+          "다크 브라운",
+          "카멜",
+          "샌드",
+          "베이지",
+          "다크 베이지",
+          "카키 베이지",
+          "데님",
+          "연청",
+          "진청",
+          "흑청"
+        ],
+        "sizes": ["S", "M", "L", "XL", "XXL"]
+      }
+    },
+    {
+      "id": 2,
+      "name": "여성",
+      "code": "WOMEN",
+      "path": "/women",
+      "description": "여성 제품",
+      "types": [
+        {
+          "id": 1,
+          "name": "원피스/스커트",
+          "description": "여성 원피스/스커트"
+        },
+        {
+          "id": 2,
+          "name": "신발",
+          "description": "여성 신발"
+        },
+        {
+          "id": 3,
+          "name": "아우터",
+          "description": "여성 아우터"
+        },
+        {
+          "id": 4,
+          "name": "상의",
+          "description": "여성 상의"
+        },
+        {
+          "id": 5,
+          "name": "바지",
+          "description": "여성 바지"
+        },
+        {
+          "id": 6,
+          "name": "가방",
+          "description": "여성 가방"
+        },
+        {
+          "id": 7,
+          "name": "속옷",
+          "description": "여성 속옷"
+        },
+        {
+          "id": 8,
+          "name": "뷰티",
+          "description": "여성 뷰티"
+        }
+      ],
+      "meta_data": {
+        "colors": [
+          "블랙",
+          "화이트",
+          "실버",
+          "라이트 그레이",
+          "그레이",
+          "다크 그레이",
+          "레드",
+          "딥레드",
+          "버건디",
+          "페일 핑크",
+          "라이트 핑크",
+          "핑크",
+          "다크 핑크",
+          "로즈골드",
+          "오렌지",
+          "아이보리",
+          "라이트 옐로우",
+          "옐로우",
+          "골드",
+          "라임",
+          "라이트 그린",
+          "그린",
+          "올리브 그린",
+          "카키",
+          "다크 그린",
+          "민트",
+          "스카이 블루",
+          "블루",
+          "네이비",
+          "다크  네이비",
+          "라벤더",
+          "퍼플",
+          "라이트 브리운",
+          "브라운",
+          "다크 브라운",
+          "카멜",
+          "샌드",
+          "베이지",
+          "다크 베이지",
+          "카키 베이지",
+          "데님",
+          "연청",
+          "진청",
+          "흑청"
+        ],
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL",
+          "XXL",
+          "FREE",
+          "230",
+          "235",
+          "240",
+          "245",
+          "250",
+          "255",
+          "260",
+          "265",
+          "270",
+          "275",
+          "280",
+          "285"
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "name": "키즈",
+      "code": "KIDS",
+      "path": "/kids",
+      "description": "키즈 제품",
+      "types": [
+        {
+          "id": 1,
+          "name": "신발",
+          "description": "키즈 신발"
+        },
+        {
+          "id": 2,
+          "name": "아우터",
+          "description": "키즈 아우터"
+        },
+        {
+          "id": 3,
+          "name": "상의",
+          "description": "키즈 상의"
+        },
+        {
+          "id": 4,
+          "name": "바지",
+          "description": "키즈 바지"
+        },
+        {
+          "id": 5,
+          "name": "가방",
+          "description": "키즈 가방"
+        },
+        {
+          "id": 6,
+          "name": "속옷",
+          "description": "키즈 속옷"
+        },
+        {
+          "id": 7,
+          "name": "모자",
+          "description": "키즈 모자"
+        }
+      ],
+      "meta_data": {}
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "title": "Signature Logo Semi Crop 티셔츠 BK4998_블랙",
+      "description": "이 제품은 넉넉한 품에 세미 크롭 기장으로 제작했습니다. 개인의 체형과 신장에 따라 크롭핏에서 세미 크롭핏으로 입을 수 있습니다.",
+      "category_id": "2",
+      "type_id": "4",
+      "brand": "바켄",
+      "price": 42900,
+      "size": ["S", "M", "L", "XL"],
+      "color": ["블랙"],
+      "discount": 32,
+      "thumbnail": "https://image.msscdn.net/thumbnails/images/goods_img/20240807/4303443/4303443_17229967349291_big.jpg?w=1200",
+      "images": [
+        "https://image.msscdn.net/thumbnails/images/prd_img/20240807/4303443/detail_4303443_17229967444808_big.jpg?w=1200",
+        "https://image.msscdn.net/thumbnails/images/prd_img/20240807/4303443/detail_4303443_17229967468398_big.jpg?w=1200"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "퀀텀 그래비티 GTX_Off White",
+      "description": "URBAN SPORTS 컨셉의 워킹 및 러닝이 가능한 GTX 퍼포먼스 워킹화 AIR KNIT와 신축성이 우수한 GORE-TEX JAZZ 원단을 사용하여 편안한 착용감을 제공함. BOA-DIAL 장착으로 탈착이 용이함. 최상의 충격흡수력과 반발탄성이 특징인 HYPER BOOM 소재가 장시간 착용시에도 편안함을 유지시켜줌",
+      "category_id": "2",
+      "type_id": "2",
+      "brand": "아이더",
+      "price": 69000,
+      "size": [
+        "230",
+        "235",
+        "240",
+        "245",
+        "250",
+        "255",
+        "260",
+        "265",
+        "270",
+        "275",
+        "280",
+        "285"
+      ],
+      "color": ["화이트"],
+      "discount": 68,
+      "thumbnail": "https://image.msscdn.net/thumbnails/images/goods_img/20230711/3403059/3403059_16890570439333_big.jpg?w=1200",
+      "images": [
+        "https://contents.k-village.co.kr/Prod/2021/D/DUF21G33W3/DUF21G33W3_DF_02.JPG/k2dims/optimize",
+        "https://contents.k-village.co.kr/Prod/2021/E/DUF21G33W3/DUF21G33W3_DS_03.JPG/k2dims/optimize",
+        "https://contents.k-village.co.kr/Prod/2021/E/DUF21G33W3/DUF21G33W3_DS_04.JPG/k2dims/optimize",
+        "https://contents.k-village.co.kr/Prod/2021/E/DUF21G33W3/DUF21G33W3_DS_05.JPG/k2dims/optimize",
+        "https://contents.k-village.co.kr/Prod/2021/E/DUF21G33W3/DUF21G33W3_DS_06.JPG/k2dims/optimize",
+        "https://contents.k-village.co.kr/Prod/2021/E/DUF21G33W3/DUF21G33W3_DS_07.JPG/k2dims/optimize"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "TIE BELT SLACKS [ CHARCOAL ]",
+      "description": "염색 시차마다 약간의 컬러 차이가 있을 수 있습니다. 디자인 특성 상 좌우 비대칭이 있을 수 있습니다. 가죽 표면의 자연주름과 힘줄, 미세반점 및 스크래치 등은 고급 천연 가죽에서 흔히 발생되는 특성입니다. 천연 가죽 제품의 경우 높은 온도 및 습도에 취약합니다. 높은 온도 및 습기에 노출 시 부드러운 천으로 닦아내어 바로 건조 시켜주시고, 이염에 주의 부탁드립니다.",
+      "category_id": "2",
+      "type_id": "5",
+      "brand": "아우로",
+      "price": 116850,
+      "size": ["S", "M"],
+      "color": ["올리브 그린"],
+      "discount": 5,
+      "thumbnail": "https://image.msscdn.net/thumbnails/images/goods_img/20240903/4397650/4397650_17259606841868_big.jpg?w=1200",
+      "images": [
+        "https://image.msscdn.net/thumbnails/images/prd_img/20240903/4397650/detail_4397650_17259606957062_big.jpg?w=1200",
+        "https://image.msscdn.net/thumbnails/images/prd_img/20240903/4397650/detail_4397650_17259606967407_big.jpg?w=1200",
+        "https://image.msscdn.net/images/prd_img/202409101832296786953427266e0122da5b31.jpg",
+        "https://image.msscdn.net/images/prd_img/202409101832296786953427266e0122da5b31.jpg"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Dear tweed mini dress (pink)",
+      "description": "러블리한 무드를 더해줄 미니 원피스입니다. 도톰한 두께감의 울 혼방 소재로 보온성이 우수하며, 보송보송하고 포근함이 느껴지는 고급스러운 원사로 제작되어 매력적인 색감이 더욱 돋보입니다. 니트나 블라우스와 레이어드해 다양한 분위기로 연출할 수 있으며, 트위드 자켓과 셋업으로 연출하기도 좋은 디자인입니다.",
+      "category_id": "2",
+      "type_id": "1",
+      "brand": "리엘",
+      "price": 160200,
+      "size": ["FREE"],
+      "color": ["핑크"],
+      "discount": 10,
+      "thumbnail": "https://image.msscdn.net/thumbnails/images/goods_img/20230818/3476923/3476923_16925958850909_big.jpg?w=1200",
+      "images": [
+        "https://image.msscdn.net/thumbnails/images/prd_img/20230818/3476923/detail_3476923_16925959543798_big.jpg?w=1200",
+        "https://image.msscdn.net/thumbnails/images/prd_img/20230818/3476923/detail_3476923_16925959556363_big.jpg?w=1200",
+        "https://image.msscdn.net/thumbnails/images/prd_img/20230818/3476923/detail_3476923_16925959571700_big.jpg?w=1200",
+        "https://image.msscdn.net/thumbnails/images/prd_img/20230818/3476923/detail_3476923_16925959588366_big.jpg?w=1200",
+        "https://image.msscdn.net/thumbnails/images/prd_img/20230818/3476923/detail_3476923_16925959605108_big.jpg?w=1200"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "DRAWSTRING BACKPACK - GREY",
+      "description": "축 처진 실루엣이 매력적인 드로우스트링 백팩. 워싱 처리된 바스락거리는 촉감의 나일론 소재 사용. 탑 핸들 디테일로 사용 편의성이 우수함. 전면 지퍼 포켓, 사이드 오픈 포켓 등 넉넉한 수납공간. 사이드 지퍼를 활용하여 편리하게 물건 수납 가능. D 링을 활용하여 키링 등으로 다양한 연출 가능. 베지터블 레더 라벨 포인트",
+      "category_id": "2",
+      "type_id": "6",
+      "brand": "페넥",
+      "price": 70400,
+      "size": ["FREE"],
+      "color": ["그레이"],
+      "discount": 20,
+      "thumbnail": "https://image.msscdn.net/thumbnails/images/goods_img/20230829/3510699/3510699_16982103498751_big.jpg?w=1200",
+      "images": [
+        "https://image.msscdn.net/thumbnails/images/prd_img/20230829/3510699/detail_3510699_16982103368113_big.jpg?w=1200",
+        "https://image.msscdn.net/thumbnails/images/prd_img/20230829/3510699/detail_3510699_16939050451538_big.jpg?w=1200",
+        "https://image.msscdn.net/thumbnails/images/prd_img/20230829/3510699/detail_3510699_16939050457400_big.jpg?w=1200",
+        "https://image.msscdn.net/thumbnails/images/prd_img/20230829/3510699/detail_3510699_16939050463269_big.jpg?w=1200",
+        "https://image.msscdn.net/thumbnails/images/prd_img/20230829/3510699/detail_3510699_16939050470430_big.jpg?w=1200"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "DRAWSTRING BACKPACK - GREY",
+      "description": "축 처진 실루엣이 매력적인 드로우스트링 백팩. 워싱 처리된 바스락거리는 촉감의 나일론 소재 사용. 탑 핸들 디테일로 사용 편의성이 우수함. 전면 지퍼 포켓, 사이드 오픈 포켓 등 넉넉한 수납공간. 사이드 지퍼를 활용하여 편리하게 물건 수납 가능. D 링을 활용하여 키링 등으로 다양한 연출 가능. 베지터블 레더 라벨 포인트",
+      "category_id": "2",
+      "type_id": "6",
+      "brand": "페넥",
+      "price": 70400,
+      "size": ["FREE"],
+      "color": ["그레이"],
+      "discount": 20,
+      "thumbnail": "https://image.msscdn.net/thumbnails/images/goods_img/20230829/3510699/3510699_16982103498751_big.jpg?w=1200",
+      "images": [
+        "https://image.msscdn.net/thumbnails/images/prd_img/20230829/3510699/detail_3510699_16982103368113_big.jpg?w=1200",
+        "https://image.msscdn.net/thumbnails/images/prd_img/20230829/3510699/detail_3510699_16939050451538_big.jpg?w=1200",
+        "https://image.msscdn.net/thumbnails/images/prd_img/20230829/3510699/detail_3510699_16939050457400_big.jpg?w=1200",
+        "https://image.msscdn.net/thumbnails/images/prd_img/20230829/3510699/detail_3510699_16939050463269_big.jpg?w=1200",
+        "https://image.msscdn.net/thumbnails/images/prd_img/20230829/3510699/detail_3510699_16939050470430_big.jpg?w=1200"
+      ]
+    }
+  ]
 }
