@@ -19,7 +19,7 @@ const Navigation = () => {
         <ul className="flex gap-14 text-gray-600">
           <li className="text-gray-600 hover:text-black">
             <NavLink
-              href="/"
+              to="/"
               className={({ isActive }) => (isActive ? "active-link" : "")}
             >
               쇼핑
@@ -27,7 +27,7 @@ const Navigation = () => {
           </li>
           <li className="text-gray-600 hover:text-black">
             <NavLink
-              href="/men"
+              to="/men"
               className={({ isActive }) => (isActive ? "active-link" : "")}
             >
               남성
@@ -43,7 +43,7 @@ const Navigation = () => {
           </li>
           <li className="text-gray-600 hover:text-black">
             <NavLink
-              href="/kid"
+              to="/kid"
               className={({ isActive }) => (isActive ? "active-link" : "")}
             >
               키즈

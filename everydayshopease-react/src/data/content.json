@@ -39,11 +39,6 @@
               "title": "속옷",
               "description": "바로 알아보기",
               "image": "../images/category-women-underwares.png"
-            },
-            {
-              "title": "뷰티",
-              "description": "바로 알아보기",
-              "image": "../images/category-women-beauty.png"
             }
           ]
         },
@@ -79,11 +74,6 @@
               "title": "속옷",
               "description": "바로 알아보기",
               "image": "../images/category-men-underwares.png"
-            },
-            {
-              "title": "뷰티",
-              "description": "바로 알아보기",
-              "image": "../images/category-men-beauty.png"
             }
           ]
         },
@@ -203,39 +193,34 @@
       "description": "남성 제품",
       "types": [
         {
-          "id": 1,
-          "name": "신발",
-          "description": "남자 신발"
+          "type_id": 1,
+          "code": "신발",
+          "type": "신발"
         },
         {
-          "id": 2,
-          "name": "아우터",
-          "description": "남자 아우터"
+          "type_id": 2,
+          "code": "아우터",
+          "type": "아우터"
         },
         {
-          "id": 3,
-          "name": "상의",
-          "description": "남자 상의"
+          "type_id": 3,
+          "code": "상의",
+          "type": "상의"
         },
         {
-          "id": 4,
-          "name": "바지",
-          "description": "남자 바지"
+          "type_id": 4,
+          "code": "바지",
+          "type": "바지"
         },
         {
-          "id": 5,
-          "name": "가방",
-          "description": "남자 가방"
+          "type_id": 5,
+          "code": "가방",
+          "type": "가방"
         },
         {
-          "id": 6,
-          "name": "속옷",
-          "description": "남자 속옷"
-        },
-        {
-          "id": 6,
-          "name": "뷰티",
-          "description": "남자 뷰티"
+          "type_id": 6,
+          "code": "속옷",
+          "type": "속옷"
         }
       ],
       "meta_data": {
@@ -252,7 +237,6 @@
           "페일 핑크",
           "라이트 핑크",
           "핑크",
-          "다크 핑크",
           "로즈골드",
           "오렌지",
           "아이보리",
@@ -285,7 +269,32 @@
           "진청",
           "흑청"
         ],
-        "sizes": ["S", "M", "L", "XL", "XXL"]
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL",
+          "XXL",
+          "85",
+          "90",
+          "95",
+          "100",
+          "105",
+          "110",
+          "FREE",
+          "230",
+          "235",
+          "240",
+          "245",
+          "250",
+          "255",
+          "260",
+          "265",
+          "270",
+          "275",
+          "280",
+          "285"
+        ]
       }
     },
     {
@@ -296,44 +305,39 @@
       "description": "여성 제품",
       "types": [
         {
-          "id": 1,
-          "name": "원피스/스커트",
-          "description": "여성 원피스/스커트"
+          "type_id": 1,
+          "code": "원피스/스커트",
+          "type": "원피스/스커트"
         },
         {
-          "id": 2,
-          "name": "신발",
-          "description": "여성 신발"
+          "type_id": 2,
+          "code": "신발",
+          "type": "신발"
         },
         {
-          "id": 3,
-          "name": "아우터",
-          "description": "여성 아우터"
+          "type_id": 3,
+          "code": "아우터",
+          "type": "아우터"
         },
         {
-          "id": 4,
-          "name": "상의",
-          "description": "여성 상의"
+          "type_id": 4,
+          "code": "상의",
+          "type": "상의"
         },
         {
-          "id": 5,
-          "name": "바지",
-          "description": "여성 바지"
+          "type_id": 5,
+          "code": "바지",
+          "type": "바지"
         },
         {
-          "id": 6,
-          "name": "가방",
-          "description": "여성 가방"
+          "type_id": 6,
+          "code": "가방",
+          "type": "가방"
         },
         {
-          "id": 7,
-          "name": "속옷",
-          "description": "여성 속옷"
-        },
-        {
-          "id": 8,
-          "name": "뷰티",
-          "description": "여성 뷰티"
+          "type_id": 7,
+          "code": "속옷",
+          "type": "속옷"
         }
       ],
       "meta_data": {
@@ -350,7 +354,6 @@
           "페일 핑크",
           "라이트 핑크",
           "핑크",
-          "다크 핑크",
           "로즈골드",
           "오렌지",
           "아이보리",
@@ -413,39 +416,39 @@
       "description": "키즈 제품",
       "types": [
         {
-          "id": 1,
-          "name": "신발",
-          "description": "키즈 신발"
+          "type_id": 1,
+          "code": "신발",
+          "type": "신발"
         },
         {
-          "id": 2,
-          "name": "아우터",
-          "description": "키즈 아우터"
+          "type_id": 2,
+          "code": "아우터",
+          "type": "아우터"
         },
         {
-          "id": 3,
-          "name": "상의",
-          "description": "키즈 상의"
+          "type_id": 3,
+          "code": "상의",
+          "type": "상의"
         },
         {
-          "id": 4,
-          "name": "바지",
-          "description": "키즈 바지"
+          "type_id": 4,
+          "code": "바지",
+          "type": "바지"
         },
         {
-          "id": 5,
-          "name": "가방",
-          "description": "키즈 가방"
+          "type_id": 5,
+          "code": "가방",
+          "type": "가방"
         },
         {
-          "id": 6,
-          "name": "속옷",
-          "description": "키즈 속옷"
+          "type_id": 6,
+          "code": "속옷",
+          "type": "속옷"
         },
         {
-          "id": 7,
-          "name": "모자",
-          "description": "키즈 모자"
+          "type_id": 7,
+          "code": "모자",
+          "type": "모자"
         }
       ],
       "meta_data": {}
@@ -581,6 +584,130 @@
         "https://image.msscdn.net/thumbnails/images/prd_img/20230829/3510699/detail_3510699_16939050463269_big.jpg?w=1200",
         "https://image.msscdn.net/thumbnails/images/prd_img/20230829/3510699/detail_3510699_16939050470430_big.jpg?w=1200"
       ]
+    },
+    {
+      "id": 7,
+      "title": "모찌텐션 서포트핏 브라팬티 세트",
+      "description": "고밀도, 고탄성 소재의 다양한 사이즈 커버 컵둘레 입체 설계로 안정적인 지지력어깨끈형 브라로 사이즈 조절",
+      "category_id": "2",
+      "type_id": "7",
+      "brand": "보디가드",
+      "price": 45900,
+      "size": ["M", "L"],
+      "color": ["민트", "라벤더", "베이지"],
+      "discount": 0,
+      "thumbnail": "https://image.msscdn.net/thumbnails/images/goods_img/20241011/4507457/4507457_17286187567317_big.jpg?w=1200",
+      "images": [
+        "https://goodpeople.co.kr/upload/admin/product/20240920/a_17312277.jpg",
+        "https://goodpeople.co.kr/upload/admin/product/20240920/a_17322499.jpg",
+        "https://goodpeople.co.kr/upload/admin/product/20240924/a_09534612.jpg",
+        "https://www.goodpeople.co.kr/upload/admin/product/20240920/a_17325782.gif"
+      ]
+    },
+    {
+      "id": 8,
+      "title": "BLACK라인 페니로퍼 구두 (브라운)",
+      "description": "브라운 컬러 BLACK라인 가죽 페니로퍼, 베지터블 가죽을 사용하여 부드러우며 광택감 없이 고급스러운 외관이 특징. 보조굽에 우드 배색 포인트가 들어가 있음.",
+      "category_id": "1",
+      "type_id": "1",
+      "brand": "에스티코",
+      "price": 60900,
+      "size": ["250", "260", "270", "280"],
+      "color": ["브라운"],
+      "discount": 53,
+      "thumbnail": "https://image.msscdn.net/thumbnails/images/goods_img/20231020/3643837/3643837_16977686723710_big.jpg?w=1200",
+      "images": [
+        "https://image.codigallery.com/stco/2021/ss/detail/SFWSZ92BSH_1.jpg"
+      ]
+    },
+    {
+      "id": 9,
+      "title": "남성 아캄포 히트 가디건",
+      "description": "투웨이 지퍼 오픈형의 경량 패딩 자켓입니다. 간절기에 아우터로 착용하고, 혹한기에는 미드레이어로 레이어드하여 착용할 수 있습니다. 여성도 함께 착용할 수 있는 제품입니다.",
+      "category_id": "1",
+      "type_id": "2",
+      "brand": "노스페이스",
+      "price": 107400,
+      "size": ["85", "90", "95", "100", "105", "110"],
+      "color": ["블랙", "베이지"],
+      "discount": 40,
+      "thumbnail": "https://image.msscdn.net/thumbnails/images/goods_img/20240214/3868152/3868152_17078921150783_big.jpg?w=1200",
+      "images": [
+        "https://image.msscdn.net/thumbnails/images/goods_img/20240214/3868146/3868146_17078920561483_big.jpg?w=1200"
+      ]
+    },
+    {
+      "id": 10,
+      "title": "MOCKNECK RECYCLE POLY KNIT",
+      "description": "베이직 모크넥 니트 9G 플레인 조직 넥라인을 편안하게 감싸는 베이직한 모크넥 니트로 맨살에도 착용 가능한 부드러운 터치감과 편안한 착용감으로 다양한 코디에 활용도가 높은 상품 친환경 소재인 리사이클 폴리를 혼방하여 환경에 미치는 영향을 최소화",
+      "category_id": "1",
+      "type_id": "3",
+      "brand": "그루프라임",
+      "price": 19500,
+      "size": ["S", "M", "L", "XL"],
+      "color": ["블랙", "화이트"],
+      "discount": 72,
+      "thumbnail": "https://image.msscdn.net/thumbnails/images/goods_img/20230824/3495057/3495057_16933724771209_big.jpg?w=1200",
+      "images": [
+        "https://image.msscdn.net/thumbnails/images/prd_img/20230824/3495057/detail_3495057_16933724795625_big.jpg?w=1200",
+        "https://image.msscdn.net/thumbnails/images/goods_img/20230824/3495140/3495140_16933724526920_big.jpg?w=1200",
+        "https://image.msscdn.net/thumbnails/images/prd_img/20230824/3495140/detail_3495140_16933724547354_big.jpg?w=1200"
+      ]
+    },
+    {
+      "id": 11,
+      "title": "크링클 트라우저 (카키 그레이)",
+      "description": "시원한 텍스처의 소재감과 부드러운 착용감의 썸머 팬츠",
+      "category_id": "1",
+      "type_id": "4",
+      "brand": "주앙옴므",
+      "price": 31600,
+      "size": ["S", "M", "L"],
+      "color": ["카키"],
+      "discount": 60,
+      "thumbnail": "https://image.msscdn.net/thumbnails/images/goods_img/20240510/4122957/4122957_17153309249421_big.jpg?w=1200",
+      "images": [
+        "https://image.msscdn.net/images/prd_img/2024051010175834629598761663d75c6548c1.png",
+        "https://image.msscdn.net/images/prd_img/2024051010175836744773760663d75c659b5e.jpg",
+        "https://image.msscdn.net/images/prd_img/2024051010175836744773760663d75c659b5e.jpg",
+        "https://image.msscdn.net/images/prd_img/2024051010175836744773760663d75c659b5e.jpg",
+        "https://image.msscdn.net/images/prd_img/2024051010175844849528330663d75c66d7f6.jpg",
+        "https://image.msscdn.net/images/prd_img/2024051010175844849528330663d75c66d7f6.jpg"
+      ]
+    },
+    {
+      "id": 12,
+      "title": "펜타곤 포켓 빅사이즈 에코백 PP-108 카멜",
+      "description": "내추럴하고 심플한 디자인이지만 포인트 포인트 마다 바텍 재봉과 같은 퀄리티를 업그레이드 시켜줄 수 있는 라이프스타일 어플리도록 제작",
+      "category_id": "1",
+      "type_id": "5",
+      "brand": "세인트크루",
+      "price": 26250,
+      "size": ["FREE"],
+      "color": ["카멜"],
+      "discount": 30,
+      "thumbnail": "https://image.msscdn.net/thumbnails/images/goods_img/20211211/2265807/2265807_1_big.jpg?w=1200",
+      "images": [
+        "https://image.msscdn.net/thumbnails/images/prd_img/20211211/2265807/detail_2265807_1_big.jpg?w=1200",
+        "https://image.msscdn.net/thumbnails/images/prd_img/20211211/2265807/detail_2265807_17187055903397_big.jpg?w=1200",
+        "https://image.msscdn.net/thumbnails/images/prd_img/20211211/2265807/detail_2265807_17187055910150_big.jpg?w=1200",
+        "https://image.msscdn.net/thumbnails/images/prd_img/20211211/2265807/detail_2265807_17187055916346_big.jpg?w=1200",
+        "https://image.msscdn.net/thumbnails/images/prd_img/20211211/2265807/detail_2265807_17187055923021_big.jpg?w=1200"
+      ]
+    },
+    {
+      "id": 13,
+      "title": "남성 나일론스판 드로즈 2호 _GD31H51910",
+      "description": "내 피부에 부드럽게 감기는 착용감 레노마 남성 나일론스판 드로즈 2호",
+      "category_id": "1",
+      "type_id": "6",
+      "brand": "레노마 언더웨어",
+      "price": 18500,
+      "size": ["95", "100", "105"],
+      "color": ["블랙"],
+      "discount": 0,
+      "thumbnail": "https://image.msscdn.net/thumbnails/images/goods_img/20211211/2265807/2265807_1_big.jpg?w=1200",
+      "images": []
     }
   ]
 }

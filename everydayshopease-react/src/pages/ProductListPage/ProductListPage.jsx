@@ -1,8 +1,19 @@
-import React from "react";
-import Navigation from "../../components/Navigation/Navigation";
+import React, { useMemo } from "react";
 import FilterIcon from "../../components/common/FilterIcon";
+import content from "../../data/content.json";
+import Categories from "../../components/Filters/Categories";
+import PriceFilter from "../../components/Filters/PriceFilter";
+import ColorFilter from "../../components/Filters/ColorFilter";
 
-const ProductListPage = () => {
+const categories = content.categories;
+
+const ProductListPage = ({ categoryType }) => {
+  const categoryContent = useMemo(() => {
+    return categories?.find(
+      (category) => category.code === categoryType.toUpperCase()
+    );
+  }, [categoryType]);
+
   return (
     <div>
       <div className="flex">
@@ -14,11 +25,17 @@ const ProductListPage = () => {
           </div>
           <div>
             <p className="text-[16px] text-black mt-5">카테고리</p>
+            <Categories types={categoryContent?.types} />
+            <hr />
           </div>
+          <PriceFilter />
+          {/* 색상 */}
+          <ColorFilter colors={categoryContent?.meta_data?.colors} />
+          <hr />
         </div>
-        <div className="p-[40px]">
+        <div className="p-[15px]">
           {/* Products  */}
-          <p>Hello</p>
+          <p className="text-black text-lg">{categoryContent?.description}</p>
         </div>
       </div>
     </div>
