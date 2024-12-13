@@ -4,6 +4,7 @@ import content from "../../data/content.json";
 import Categories from "../../components/Filters/Categories";
 import PriceFilter from "../../components/Filters/PriceFilter";
 import ColorFilter from "../../components/Filters/ColorFilter";
+import SizeFilter from "../../components/Filters/SizeFilter";
 
 const categories = content.categories;
 
@@ -32,6 +33,8 @@ const ProductListPage = ({ categoryType }) => {
           {/* 색상 */}
           <ColorFilter colors={categoryContent?.meta_data?.colors} />
           <hr />
+          {/* 사이즈 */}
+          <SizeFilter sizes={categoryContent?.meta_data?.sizes} />
         </div>
         <div className="p-[15px]">
           {/* Products  */}

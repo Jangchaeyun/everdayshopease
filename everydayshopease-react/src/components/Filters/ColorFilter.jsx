@@ -49,10 +49,10 @@ const ColorFilter = ({ colors }) => {
   const [appliedColors, setAppliedColors] = useState([]);
   const onClickDiv = useCallback(
     (item) => {
-      if (appliedColors.indexOf(item)) {
-        appliedColors.splice(appliedColors.indexOf(item), 1);
+      if (appliedColors.indexOf(item) > -1) {
+        setAppliedColors(appliedColors?.filter((color) => color !== item));
       } else {
-        setAppliedColors({ ...appliedColors, item });
+        setAppliedColors([...appliedColors, item]);
       }
     },
     [appliedColors]
@@ -60,17 +60,20 @@ const ColorFilter = ({ colors }) => {
   return (
     <div className="flex flex-col mb-4">
       <p className="text-[16px] text-black mt-5 mb-5">색상</p>
-      <div className="flex flex-wrap px-2">
+      <div className="flex flex-wrap justify-center items-center px-2">
         {colors?.map((item) => {
           return (
-            <div className="flex flex-col mr-2">
+            <div
+              className="flex flex-col items-center mr-3 mb-3 text-center"
+              style={{ width: "70px" }}
+            >
               <div
-                className="w-8 h-8 border rounded-xl mr-5 cursor-pointer hover:outline-2 hover:scale-110 items-center"
-                onClick={onClickDiv}
+                className="w-8 h-8 border rounded-xl cursor-pointer hover:outline-2 hover:scale-110"
+                onClick={() => onClickDiv(item)}
                 style={{ background: `${colorSeletor[item]}` }}
               ></div>
               <p
-                className="text-sm text-gray-400 mb-2 items-center"
+                className="text-sm text-gray-400 mt-2 text-center"
                 style={{
                   color: `${appliedColors?.includes(item) ? "black" : ""}`,
                 }}
