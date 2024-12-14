@@ -457,7 +457,7 @@
   "products": [
     {
       "id": 1,
-      "title": "Signature Logo Semi Crop 티셔츠 BK4998_블랙",
+      "title": "Signature Logo Semi Crop 티셔츠 블랙",
       "description": "이 제품은 넉넉한 품에 세미 크롭 기장으로 제작했습니다. 개인의 체형과 신장에 따라 크롭핏에서 세미 크롭핏으로 입을 수 있습니다.",
       "category_id": 2,
       "type_id": 4,
@@ -572,27 +572,6 @@
     },
     {
       "id": 6,
-      "title": "DRAWSTRING BACKPACK - GREY",
-      "description": "축 처진 실루엣이 매력적인 드로우스트링 백팩. 워싱 처리된 바스락거리는 촉감의 나일론 소재 사용. 탑 핸들 디테일로 사용 편의성이 우수함. 전면 지퍼 포켓, 사이드 오픈 포켓 등 넉넉한 수납공간. 사이드 지퍼를 활용하여 편리하게 물건 수납 가능. D 링을 활용하여 키링 등으로 다양한 연출 가능. 베지터블 레더 라벨 포인트",
-      "category_id": 2,
-      "type_id": 6,
-      "brand": "페넥",
-      "price": 70400,
-      "size": ["FREE"],
-      "color": ["그레이"],
-      "discount": 20,
-      "thumbnail": "https://image.msscdn.net/thumbnails/images/goods_img/20230829/3510699/3510699_16982103498751_big.jpg?w=1200",
-      "images": [
-        "https://image.msscdn.net/thumbnails/images/prd_img/20230829/3510699/detail_3510699_16982103368113_big.jpg?w=1200",
-        "https://image.msscdn.net/thumbnails/images/prd_img/20230829/3510699/detail_3510699_16939050451538_big.jpg?w=1200",
-        "https://image.msscdn.net/thumbnails/images/prd_img/20230829/3510699/detail_3510699_16939050457400_big.jpg?w=1200",
-        "https://image.msscdn.net/thumbnails/images/prd_img/20230829/3510699/detail_3510699_16939050463269_big.jpg?w=1200",
-        "https://image.msscdn.net/thumbnails/images/prd_img/20230829/3510699/detail_3510699_16939050470430_big.jpg?w=1200"
-      ],
-      "rating": "4.7"
-    },
-    {
-      "id": 7,
       "title": "모찌텐션 서포트핏 브라팬티 세트",
       "description": "고밀도, 고탄성 소재의 다양한 사이즈 커버 컵둘레 입체 설계로 안정적인 지지력어깨끈형 브라로 사이즈 조절",
       "category_id": 2,
@@ -612,7 +591,7 @@
       "rating": "4.1"
     },
     {
-      "id": 8,
+      "id": 7,
       "title": "BLACK라인 페니로퍼 구두 (브라운)",
       "description": "브라운 컬러 BLACK라인 가죽 페니로퍼, 베지터블 가죽을 사용하여 부드러우며 광택감 없이 고급스러운 외관이 특징. 보조굽에 우드 배색 포인트가 들어가 있음.",
       "category_id": 1,
@@ -629,11 +608,11 @@
       "rating": "4.2"
     },
     {
-      "id": 9,
+      "id": 8,
       "title": "남성 아캄포 히트 가디건",
       "description": "투웨이 지퍼 오픈형의 경량 패딩 자켓입니다. 간절기에 아우터로 착용하고, 혹한기에는 미드레이어로 레이어드하여 착용할 수 있습니다. 여성도 함께 착용할 수 있는 제품입니다.",
       "category_id": 1,
-      "type_id": "2",
+      "type_id": 2,
       "brand": "노스페이스",
       "price": 107400,
       "size": ["85", "90", "95", "100", "105", "110"],
@@ -646,7 +625,7 @@
       "rating": "4.8"
     },
     {
-      "id": 10,
+      "id": 9,
       "title": "MOCKNECK RECYCLE POLY KNIT",
       "description": "베이직 모크넥 니트 9G 플레인 조직 넥라인을 편안하게 감싸는 베이직한 모크넥 니트로 맨살에도 착용 가능한 부드러운 터치감과 편안한 착용감으로 다양한 코디에 활용도가 높은 상품 친환경 소재인 리사이클 폴리를 혼방하여 환경에 미치는 영향을 최소화",
       "category_id": 1,
@@ -665,7 +644,7 @@
       "rating": "4.8"
     },
     {
-      "id": 11,
+      "id": 10,
       "title": "크링클 트라우저 (카키 그레이)",
       "description": "시원한 텍스처의 소재감과 부드러운 착용감의 썸머 팬츠",
       "category_id": 1,
@@ -687,7 +666,7 @@
       "rating": "4.4"
     },
     {
-      "id": 12,
+      "id": 11,
       "title": "펜타곤 포켓 빅사이즈 에코백 PP-108 카멜",
       "description": "내추럴하고 심플한 디자인이지만 포인트 포인트 마다 바텍 재봉과 같은 퀄리티를 업그레이드 시켜줄 수 있는 라이프스타일 어플리도록 제작",
       "category_id": 1,

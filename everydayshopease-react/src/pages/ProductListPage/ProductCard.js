@@ -1,7 +1,9 @@
 import React from "react";
 import SvgFavorite from "../../components/common/SvgFavorite";
+import { Link } from "react-router-dom";
 
 const ProductCard = ({
+  id,
   title,
   description,
   price,
@@ -12,12 +14,13 @@ const ProductCard = ({
 }) => {
   return (
     <div className="flex flex-col hover:scale-105 relative">
-      <img
-        className={`h-[320px] w-[310px]
-         border rounded-lg cursor-pointer object-cover block`}
-        src={thumbnail}
-        alt={title}
-      />
+      <Link to={`/product/${id}`}>
+        <img
+          className={`h-[320px] w-[310px] border rounded-lg cursor-pointer object-cover block`}
+          src={thumbnail}
+          alt={title}
+        />
+      </Link>
 
       <div className="flex justify-between items-center">
         <div className="flex flex-col pt-2">
