@@ -470,7 +470,8 @@
       "images": [
         "https://image.msscdn.net/thumbnails/images/prd_img/20240807/4303443/detail_4303443_17229967444808_big.jpg?w=1200",
         "https://image.msscdn.net/thumbnails/images/prd_img/20240807/4303443/detail_4303443_17229967468398_big.jpg?w=1200"
-      ]
+      ],
+      "rating": "4.3"
     },
     {
       "id": 2,
@@ -504,7 +505,8 @@
         "https://contents.k-village.co.kr/Prod/2021/E/DUF21G33W3/DUF21G33W3_DS_05.JPG/k2dims/optimize",
         "https://contents.k-village.co.kr/Prod/2021/E/DUF21G33W3/DUF21G33W3_DS_06.JPG/k2dims/optimize",
         "https://contents.k-village.co.kr/Prod/2021/E/DUF21G33W3/DUF21G33W3_DS_07.JPG/k2dims/optimize"
-      ]
+      ],
+      "rating": "4.5"
     },
     {
       "id": 3,
@@ -523,7 +525,8 @@
         "https://image.msscdn.net/thumbnails/images/prd_img/20240903/4397650/detail_4397650_17259606967407_big.jpg?w=1200",
         "https://image.msscdn.net/images/prd_img/202409101832296786953427266e0122da5b31.jpg",
         "https://image.msscdn.net/images/prd_img/202409101832296786953427266e0122da5b31.jpg"
-      ]
+      ],
+      "rating": "4.4"
     },
     {
       "id": 4,
@@ -543,7 +546,8 @@
         "https://image.msscdn.net/thumbnails/images/prd_img/20230818/3476923/detail_3476923_16925959571700_big.jpg?w=1200",
         "https://image.msscdn.net/thumbnails/images/prd_img/20230818/3476923/detail_3476923_16925959588366_big.jpg?w=1200",
         "https://image.msscdn.net/thumbnails/images/prd_img/20230818/3476923/detail_3476923_16925959605108_big.jpg?w=1200"
-      ]
+      ],
+      "rating": "4.6"
     },
     {
       "id": 5,
@@ -563,7 +567,8 @@
         "https://image.msscdn.net/thumbnails/images/prd_img/20230829/3510699/detail_3510699_16939050457400_big.jpg?w=1200",
         "https://image.msscdn.net/thumbnails/images/prd_img/20230829/3510699/detail_3510699_16939050463269_big.jpg?w=1200",
         "https://image.msscdn.net/thumbnails/images/prd_img/20230829/3510699/detail_3510699_16939050470430_big.jpg?w=1200"
-      ]
+      ],
+      "rating": "4.5"
     },
     {
       "id": 6,
@@ -583,7 +588,8 @@
         "https://image.msscdn.net/thumbnails/images/prd_img/20230829/3510699/detail_3510699_16939050457400_big.jpg?w=1200",
         "https://image.msscdn.net/thumbnails/images/prd_img/20230829/3510699/detail_3510699_16939050463269_big.jpg?w=1200",
         "https://image.msscdn.net/thumbnails/images/prd_img/20230829/3510699/detail_3510699_16939050470430_big.jpg?w=1200"
-      ]
+      ],
+      "rating": "4.7"
     },
     {
       "id": 7,
@@ -602,7 +608,8 @@
         "https://goodpeople.co.kr/upload/admin/product/20240920/a_17322499.jpg",
         "https://goodpeople.co.kr/upload/admin/product/20240924/a_09534612.jpg",
         "https://www.goodpeople.co.kr/upload/admin/product/20240920/a_17325782.gif"
-      ]
+      ],
+      "rating": "4.1"
     },
     {
       "id": 8,
@@ -618,7 +625,8 @@
       "thumbnail": "https://image.msscdn.net/thumbnails/images/goods_img/20231020/3643837/3643837_16977686723710_big.jpg?w=1200",
       "images": [
         "https://image.codigallery.com/stco/2021/ss/detail/SFWSZ92BSH_1.jpg"
-      ]
+      ],
+      "rating": "4.2"
     },
     {
       "id": 9,
@@ -634,7 +642,8 @@
       "thumbnail": "https://image.msscdn.net/thumbnails/images/goods_img/20240214/3868152/3868152_17078921150783_big.jpg?w=1200",
       "images": [
         "https://image.msscdn.net/thumbnails/images/goods_img/20240214/3868146/3868146_17078920561483_big.jpg?w=1200"
-      ]
+      ],
+      "rating": "4.8"
     },
     {
       "id": 10,
@@ -652,7 +661,8 @@
         "https://image.msscdn.net/thumbnails/images/prd_img/20230824/3495057/detail_3495057_16933724795625_big.jpg?w=1200",
         "https://image.msscdn.net/thumbnails/images/goods_img/20230824/3495140/3495140_16933724526920_big.jpg?w=1200",
         "https://image.msscdn.net/thumbnails/images/prd_img/20230824/3495140/detail_3495140_16933724547354_big.jpg?w=1200"
-      ]
+      ],
+      "rating": "4.8"
     },
     {
       "id": 11,
@@ -673,7 +683,8 @@
         "https://image.msscdn.net/images/prd_img/2024051010175836744773760663d75c659b5e.jpg",
         "https://image.msscdn.net/images/prd_img/2024051010175844849528330663d75c66d7f6.jpg",
         "https://image.msscdn.net/images/prd_img/2024051010175844849528330663d75c66d7f6.jpg"
-      ]
+      ],
+      "rating": "4.4"
     },
     {
       "id": 12,
@@ -693,7 +704,8 @@
         "https://image.msscdn.net/thumbnails/images/prd_img/20211211/2265807/detail_2265807_17187055910150_big.jpg?w=1200",
         "https://image.msscdn.net/thumbnails/images/prd_img/20211211/2265807/detail_2265807_17187055916346_big.jpg?w=1200",
         "https://image.msscdn.net/thumbnails/images/prd_img/20211211/2265807/detail_2265807_17187055923021_big.jpg?w=1200"
-      ]
+      ],
+      "rating": "4.5"
     },
     {
       "id": 13,
@@ -707,7 +719,8 @@
       "color": ["블랙"],
       "discount": 0,
       "thumbnail": "https://image.msscdn.net/thumbnails/images/goods_img/20211211/2265807/2265807_1_big.jpg?w=1200",
-      "images": []
+      "images": [],
+      "rating": "4.3"
     }
   ]
 }

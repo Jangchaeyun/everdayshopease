@@ -21,6 +21,14 @@ const SizeFilter = ({ sizes }) => {
             <div className="flex flex-col mr-2">
               <div
                 className="flex items-center justify-center w-[50px] h-8 border text-center mb-4 rounded-lg mr-4 cursor-pointer hover:scale-110 bg-white border-gray-500 text-gray-500"
+                style={
+                  appliedSize.includes(item)
+                    ? {
+                        background: "black",
+                        color: "white",
+                      }
+                    : {}
+                }
                 onClick={() => onClickDiv(item)}
               >
                 {item}
