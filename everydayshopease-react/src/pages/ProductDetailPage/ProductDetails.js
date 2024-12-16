@@ -1,5 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useLoaderData } from "react-router-dom";
+import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
+import content from "../../data/content.json";
+
+const categories = content?.categories;
 
 const ProductDetails = () => {
   const { product } = useLoaderData();
@@ -8,6 +12,35 @@ const ProductDetails = () => {
       ? product?.images[0]
       : product?.thumbnail
   );
+  const [breadcrumbLinks, setBreadcrumbLinks] = useState([]);
+
+  const productCategory = useMemo(() => {
+    return categories?.find(
+      (category) => category?.id === product?.category_id
+    );
+  }, [product]);
+
+  useEffect(() => {
+    setBreadcrumbLinks([]);
+    const arrayLinks = [
+      { title: "쇼핑", path: "/" },
+      {
+        title: productCategory?.name,
+        path: productCategory?.path,
+      },
+    ];
+    const productType = productCategory?.types?.find(
+      (item) => item?.type_id === product?.type_id
+    );
+    if (productType) {
+      arrayLinks?.push({
+        title: productType?.name,
+        path: productType?.name,
+      });
+    }
+    setBreadcrumbLinks(arrayLinks);
+  }, [productCategory, product]);
+
   return (
     <div className="flex flex-col md:flex-row p-10">
       <div className="w-[100%] lg:w-[50%]  md:w-[40%]">
@@ -39,7 +72,10 @@ const ProductDetails = () => {
           </div>
         </div>
       </div>
-      <div className="w-[60%]">{/* Product Description */}</div>
+      <div className="w-[60%] px-10">
+        {/* Product Description */}
+        <Breadcrumb links={breadcrumbLinks} />
+      </div>
     </div>
   );
 };

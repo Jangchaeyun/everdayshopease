@@ -195,32 +195,32 @@
         {
           "type_id": 1,
           "code": "신발",
-          "type": "신발"
+          "name": "신발"
         },
         {
           "type_id": 2,
           "code": "아우터",
-          "type": "아우터"
+          "name": "아우터"
         },
         {
           "type_id": 3,
           "code": "상의",
-          "type": "상의"
+          "name": "상의"
         },
         {
           "type_id": 4,
           "code": "바지",
-          "type": "바지"
+          "name": "바지"
         },
         {
           "type_id": 5,
           "code": "가방",
-          "type": "가방"
+          "name": "가방"
         },
         {
           "type_id": 6,
           "code": "속옷",
-          "type": "속옷"
+          "name": "속옷"
         }
       ],
       "meta_data": {
@@ -307,37 +307,37 @@
         {
           "type_id": 1,
           "code": "원피스/스커트",
-          "type": "원피스/스커트"
+          "name": "원피스/스커트"
         },
         {
           "type_id": 2,
           "code": "신발",
-          "type": "신발"
+          "name": "신발"
         },
         {
           "type_id": 3,
           "code": "아우터",
-          "type": "아우터"
+          "name": "아우터"
         },
         {
           "type_id": 4,
           "code": "상의",
-          "type": "상의"
+          "name": "상의"
         },
         {
           "type_id": 5,
           "code": "바지",
-          "type": "바지"
+          "name": "바지"
         },
         {
           "type_id": 6,
           "code": "가방",
-          "type": "가방"
+          "name": "가방"
         },
         {
           "type_id": 7,
           "code": "속옷",
-          "type": "속옷"
+          "name": "속옷"
         }
       ],
       "meta_data": {
@@ -418,37 +418,37 @@
         {
           "type_id": 1,
           "code": "신발",
-          "type": "신발"
+          "name": "신발"
         },
         {
           "type_id": 2,
           "code": "아우터",
-          "type": "아우터"
+          "name": "아우터"
         },
         {
           "type_id": 3,
           "code": "상의",
-          "type": "상의"
+          "name": "상의"
         },
         {
           "type_id": 4,
           "code": "바지",
-          "type": "바지"
+          "name": "바지"
         },
         {
           "type_id": 5,
           "code": "가방",
-          "type": "가방"
+          "name": "가방"
         },
         {
           "type_id": 6,
           "code": "속옷",
-          "type": "속옷"
+          "name": "속옷"
         },
         {
           "type_id": 7,
           "code": "모자",
-          "type": "모자"
+          "name": "모자"
         }
       ],
       "meta_data": {}
