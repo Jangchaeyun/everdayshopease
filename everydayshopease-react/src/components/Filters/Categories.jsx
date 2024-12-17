@@ -15,7 +15,7 @@ const Categories = ({ types }) => {
               htmlFor={type?.code}
               className="px-2 text-[14px] text-gray-600"
             >
-              {type?.type}
+              {type?.name}
             </label>
           </div>
         );

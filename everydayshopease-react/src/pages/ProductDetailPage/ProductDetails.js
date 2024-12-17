@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
 import content from "../../data/content.json";
+import Rating from "../../components/Rating/Rating";
 
 const categories = content?.categories;
 
@@ -23,7 +24,7 @@ const ProductDetails = () => {
   useEffect(() => {
     setBreadcrumbLinks([]);
     const arrayLinks = [
-      { title: "쇼핑", path: "/" },
+      { title: "홈", path: "/" },
       {
         title: productCategory?.name,
         path: productCategory?.path,
@@ -67,7 +68,7 @@ const ProductDetails = () => {
           <div className="w-full md:w-[80%] flex justify-center md:pt-0 pt-10">
             <img
               src={image}
-              className="h-full w-full max-h-[520px] border rounded-lg cursor-pointer object-cover"
+              className="h-full w-full max-h-[620px] border rounded-lg cursor-pointer object-cover"
             />
           </div>
         </div>
@@ -75,6 +76,8 @@ const ProductDetails = () => {
       <div className="w-[60%] px-10">
         {/* Product Description */}
         <Breadcrumb links={breadcrumbLinks} />
+        <p className="text-3xl pt-4">{product?.title}</p>
+        <Rating rating={product?.rating} />
       </div>
     </div>
   );

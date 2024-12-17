@@ -22,7 +22,7 @@ const Navigation = () => {
               to="/"
               className={({ isActive }) => (isActive ? "active-link" : "")}
             >
-              쇼핑
+              홈
             </NavLink>
           </li>
           <li className="text-gray-600 hover:text-black">
