@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from "react";
-const colorSeletor = {
+export const colorSeletor = {
   블랙: "#000000",
   화이트: "#FFFFFF",
   실버: "#C0C0C0",

@@ -1,8 +1,10 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
 import content from "../../data/content.json";
 import Rating from "../../components/Rating/Rating";
+import SizeFilter from "../../components/Filters/SizeFilter";
+import ProductColors from "./ProductColors";
 
 const categories = content?.categories;
 
@@ -78,6 +80,24 @@ const ProductDetails = () => {
         <Breadcrumb links={breadcrumbLinks} />
         <p className="text-3xl pt-4">{product?.title}</p>
         <Rating rating={product?.rating} />
+        <div className="flex flex-col">
+          <div className="flex gap-2">
+            <p className="text-sm bold">사이즈 선택</p>
+            <Link
+              className="text-sm text-gray-500 hover:text-gray-900"
+              to={"https://ko.wikipedia.org/wiki/%EC%98%B7_%ED%81%AC%EA%B8%B0"}
+            >
+              {"사이즈 가이드 ->"}
+            </Link>
+          </div>
+        </div>
+        <div className="mt-2">
+          <SizeFilter sizes={product?.size} hidleTitle />
+        </div>
+        <div>
+          <p className="text-lg">가능한 색상</p>
+          <ProductColors colors={product?.color} />
+        </div>
       </div>
     </div>
   );

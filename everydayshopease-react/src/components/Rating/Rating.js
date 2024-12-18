@@ -14,7 +14,7 @@ const Rating = ({ rating }) => {
       {new Array(5 - ratingNumber?.length).fill().map((_, index) => (
         <SvgEmptyStar key={"empty-" + index} />
       ))}
-      {rating}
+      <p className="px-2 to-gray-500">{rating}</p>
     </div>
   );
 };
