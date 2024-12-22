@@ -1,10 +1,9 @@
 import React from "react";
-import Wishlist from "../common/Wishlist";
-import AccountIcon from "../common/AccountIcon";
-import CartIcon from "../common/CartIcon";
 import { Link, NavLink } from "react-router-dom";
 import "../Navigation/Navigation.css";
-
+import { CartIcon } from "../common/CartIcon";
+import { AccountIcon } from "../common/AccountIcon";
+import { Wishlist } from "../common/Wishlist";
 const Navigation = () => {
   return (
     <nav className="flex items-center py-6 px-16 justify-between gap-40">
