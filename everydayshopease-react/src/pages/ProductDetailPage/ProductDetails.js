@@ -36,14 +36,14 @@ const extraSections = [
 
 const ProductDetails = () => {
   const { product } = useLoaderData();
-  const [image, setImage] = useState(
-    product?.images[0]?.startsWith("http")
-      ? product?.images[0]
-      : product?.thumbnail
-  );
+  const [image, setImage] = useState();
   const [breadcrumbLinks, setBreadcrumbLinks] = useState([]);
 
-  const productListItems = useMemo(() => {}, []);
+  const similarProducts = useMemo(() => {
+    return content?.products?.filter(
+      (item) => item?.type_id === product?.type_id && item?.id !== product?.id
+    );
+  }, [product]);
 
   const productCategory = useMemo(() => {
     return categories?.find(
@@ -52,6 +52,11 @@ const ProductDetails = () => {
   }, [product]);
 
   useEffect(() => {
+    setImage(
+      product?.images[0]?.startsWith("http")
+        ? product?.images[0]
+        : product?.thumbnail
+    );
     setBreadcrumbLinks([]);
     const arrayLinks = [
       { title: "홈", path: "/" },
@@ -167,15 +172,18 @@ const ProductDetails = () => {
         </div>
       </div>
       {/* Product Description */}
-      <div className="mdw-[50%] w-full pt-4 p-10">
-        <SectionHeading title={"제품 설명"} />
+      <SectionHeading title={"제품 설명"} />
+      <div className="md:w-[50%] w-full p-2">
         <p className="px-8">{product.description}</p>
       </div>
-      <div className="pt-4">
-        <SectionHeading title={"비슷한 제품"} />
-        {productListItems?.map((item, index) => (
-          <ProductCard key={index} {...item} />
-        ))}
+      <SectionHeading title={"비슷한 제품"} />
+      <div className="flex px-10">
+        <div className="pt-4 grid grid-cols-1 lg:grid-cols-5 md:grid-cols-2 gap-8 px-2">
+          {similarProducts?.map((item, index) => (
+            <ProductCard key={index} {...item} />
+          ))}
+          {similarProducts?.length && <p>제품을 찾을 수 없습니다.</p>}
+        </div>
       </div>
     </>
   );
