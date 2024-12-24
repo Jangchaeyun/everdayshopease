@@ -56,6 +56,9 @@ public class Product {
     @JoinColumn(name = "categoryType_id", nullable = false)
     private CategoryType categoryType;
 
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
+    private List<Resources> resources;
+
     @PrePersist
     protected void onCreate() {
         createdAt = new Date();
