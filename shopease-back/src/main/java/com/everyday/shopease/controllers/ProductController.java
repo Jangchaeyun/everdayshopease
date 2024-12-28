@@ -1,17 +1,21 @@
 package com.everyday.shopease.controllers;
 
+import ch.qos.logback.core.util.StringUtil;
 import com.everyday.shopease.dto.ProductDto;
 import com.everyday.shopease.entities.Product;
 import com.everyday.shopease.services.ProductService;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/products")
+@CrossOrigin
 public class ProductController {
     private final ProductService productService;
 
@@ -20,9 +24,20 @@ public class ProductController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Product>> getAllProducts(@RequestParam(required = false) UUID categoryId, @RequestParam(required = false) UUID typeId) {
-        List<Product> productList = productService.getAllProducts(categoryId, typeId);
+    public ResponseEntity<List<ProductDto>> getAllProducts(@RequestParam(required = false) UUID categoryId, @RequestParam(required = false) UUID typeId, @RequestParam(required = false) String slug) {
+        List<ProductDto> productList = new ArrayList<>();
+        if (StringUtils.isNotBlank(slug)) {
+          ProductDto productDto = productService.getProductBySlug(slug);
+          productList.add(productDto);
+        }
+        productList = productService.getAllProducts(categoryId, typeId);
         return new ResponseEntity<>(productList, HttpStatus.OK);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<ProductDto> getProductById(@PathVariable UUID id) {
+        ProductDto productDto = productService.getProductById(id);
+        return new ResponseEntity<>(productDto, HttpStatus.OK);
     }
 
     // create Product
