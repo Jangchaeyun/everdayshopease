@@ -3,6 +3,7 @@ package com.everyday.shopease.controllers;
 import com.everyday.shopease.dto.CategoryDto;
 import com.everyday.shopease.entities.Category;
 import com.everyday.shopease.services.CategoryService;
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +14,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/category")
+@CrossOrigin
 public class CategoryController {
 
     @Autowired
@@ -25,8 +27,9 @@ public class CategoryController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Category>> getAllCategories() {
+    public ResponseEntity<List<Category>> getAllCategories(HttpServletResponse response) {
         List<Category> categoryList = categoryService.getAllCategory();
+        response.setHeader("Content-Range", String.valueOf(categoryList.size()));
         return new ResponseEntity<>(categoryList, HttpStatus.OK);
     }
 

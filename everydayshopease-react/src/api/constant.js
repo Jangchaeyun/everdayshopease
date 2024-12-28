@@ -1,5 +1,5 @@
 export const API_URLS = {
-  GET_PRODUCTS: "/api/product",
+  GET_PRODUCTS: "/api/products",
   GET_PRODUCT: (id) => `/api/product/${id}`,
   GET_CATEGORIES: "/api/category",
   GET_CATEGORY: (id) => `/api/category/${id}`,

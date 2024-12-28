@@ -5,15 +5,24 @@ import content from "./data/content.json";
 import Category from "./components/Sections/Categories/Category";
 import Footer from "./components/Footer/Footer";
 import { fetchCategories } from "./api/fetchCategories";
+import { useDispatch } from "react-redux";
+import { loadCategories } from "./store/features/category";
+import { setLoading } from "./store/features/common";
 
 const Shop = () => {
+  const dispatch = useDispatch();
+
   useEffect(() => {
+    dispatch(setLoading(true));
     fetchCategories()
       .then((res) => {
-        console.log("Categories ", res);
+        dispatch(loadCategories(res));
       })
-      .catch((err) => {});
-  }, []);
+      .catch((err) => {})
+      .finally(() => {
+        dispatch(setLoading(false));
+      });
+  }, [dispatch]);
   return (
     <>
       <HeroSection />
