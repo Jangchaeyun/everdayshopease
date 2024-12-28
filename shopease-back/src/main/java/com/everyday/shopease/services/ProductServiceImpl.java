@@ -78,4 +78,10 @@ public class ProductServiceImpl implements ProductService {
 
         return productDto;
     }
+
+    @Override
+    public Product updateProduct(ProductDto productDto) {
+        Product product = productRepository.findById(productDto.getId()).orElseThrow(() -> new ResourceNotFoundEx("Product not found!"));
+        return productRepository.save(productMapper.mapToProductEntity(productDto));
+    }
 }

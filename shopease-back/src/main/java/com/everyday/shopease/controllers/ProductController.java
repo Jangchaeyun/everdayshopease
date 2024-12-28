@@ -30,6 +30,9 @@ public class ProductController {
           ProductDto productDto = productService.getProductBySlug(slug);
           productList.add(productDto);
         }
+        else {
+            productList = productService.getAllProducts(categoryId, typeId);
+        }
         productList = productService.getAllProducts(categoryId, typeId);
         return new ResponseEntity<>(productList, HttpStatus.OK);
     }
@@ -45,5 +48,11 @@ public class ProductController {
     public ResponseEntity<Product> createProduct(@RequestBody ProductDto productDto) {
         Product product = productService.addProduct(productDto);
         return new ResponseEntity<>(product, HttpStatus.CREATED);
+    }
+
+    @PutMapping
+    public ResponseEntity<Product> updateProduct(@RequestBody ProductDto productDto) {
+        Product product = productService.updateProduct(productDto);
+        return new ResponseEntity<>(product, HttpStatus.OK);
     }
 }

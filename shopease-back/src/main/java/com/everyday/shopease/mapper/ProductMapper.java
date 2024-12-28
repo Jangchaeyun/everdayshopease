@@ -21,7 +21,7 @@ public class ProductMapper {
 
     public Product mapToProductEntity(ProductDto productDto){
         Product product = new Product();
-        if(null != productDto.getId()){
+        if (null != productDto.getId()) {
             product.setId(productDto.getId());
         }
         product.setName(productDto.getName());
@@ -58,9 +58,10 @@ public class ProductMapper {
 
         return productResources.stream().map(productResourceDto -> {
             Resources resources= new Resources();
-            if(null != productResourceDto.getId()){
+            if (null != productResourceDto.getId()) {
                 resources.setId(productResourceDto.getId());
             }
+
             resources.setName(productResourceDto.getName());
             resources.setType(productResourceDto.getType());
             resources.setUrl(productResourceDto.getUrl());
@@ -73,7 +74,8 @@ public class ProductMapper {
     private List<ProductVariant> mapToProductVariant(List<ProductVariantDto> productVariantDtos, Product product){
         return productVariantDtos.stream().map(productVariantDto -> {
             ProductVariant productVariant = new ProductVariant();
-            if(null != productVariantDto.getId()){
+
+            if (null != productVariantDto.getId()) {
                 productVariant.setId(productVariantDto.getId());
             }
             productVariant.setColor(productVariantDto.getColor());
