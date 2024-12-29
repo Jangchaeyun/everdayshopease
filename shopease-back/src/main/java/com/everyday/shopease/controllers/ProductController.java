@@ -1,10 +1,10 @@
 package com.everyday.shopease.controllers;
 
-import ch.qos.logback.core.util.StringUtil;
 import com.everyday.shopease.dto.ProductDto;
 import com.everyday.shopease.entities.Product;
 import com.everyday.shopease.services.ProductService;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,6 +19,7 @@ import java.util.UUID;
 public class ProductController {
     private final ProductService productService;
 
+    @Autowired
     public ProductController(ProductService productService) {
         this.productService = productService;
     }
@@ -33,7 +34,7 @@ public class ProductController {
         else {
             productList = productService.getAllProducts(categoryId, typeId);
         }
-        productList = productService.getAllProducts(categoryId, typeId);
+
         return new ResponseEntity<>(productList, HttpStatus.OK);
     }
 

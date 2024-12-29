@@ -49,8 +49,6 @@ public class ProductMapper {
             product.setResources(mapToProductResources(productDto.getProductResources(),product));
         }
 
-
-
         return product;
     }
 

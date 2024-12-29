@@ -1,6 +1,6 @@
 import React from "react";
 
-const SvgEmptyStar = () => {
+export const SvgEmptyStar = () => {
   return (
     <svg
       className="w-4 h-4 ms-1 text-gray-300 dark:text-gray-500"
@@ -13,5 +13,3 @@ const SvgEmptyStar = () => {
     </svg>
   );
 };
-
-export default SvgEmptyStar;
