@@ -4,7 +4,6 @@ import com.everyday.shopease.auth.dto.RegistrationRequest;
 import com.everyday.shopease.auth.dto.RegistrationResponse;
 import com.everyday.shopease.auth.entities.User;
 import com.everyday.shopease.auth.helper.VerificationCodeGenerator;
-import com.everyday.shopease.auth.repositories.AuthorityRepository;
 import com.everyday.shopease.auth.repositories.UserDetailRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -13,6 +12,7 @@ import org.springframework.web.server.ServerErrorException;
 
 @Service
 public class RegistrationService {
+
     @Autowired
     private UserDetailRepository userDetailRepository;
 
@@ -23,25 +23,27 @@ public class RegistrationService {
     private PasswordEncoder passwordEncoder;
 
     @Autowired
-    private  EmailService emailService;
+    private EmailService emailService;
 
-    public RegistrationResponse createUser(RegistrationRequest registrationRequest) {
-        User existing = userDetailRepository.findByEmail(registrationRequest.getEmail());
+    public RegistrationResponse createUser(RegistrationRequest request) {
 
-        if (null != existing) {
-            return RegistrationResponse.builder()
+        User existing = userDetailRepository.findByEmail(request.getEmail());
+
+        if(null != existing){
+            return  RegistrationResponse.builder()
                     .code(400)
                     .message("Email already exist!")
                     .build();
         }
 
-        try {
+        try{
+
             User user = new User();
-            user.setFirstName(registrationRequest.getFirstName());
-            user.setLastName(registrationRequest.getLastName());
-            user.setEmail(registrationRequest.getEmail());
+            user.setFirstName(request.getFirstName());
+            user.setLastName(request.getLastName());
+            user.setEmail(request.getEmail());
             user.setEnabled(false);
-            user.setPassword(passwordEncoder.encode(registrationRequest.getPassword()));
+            user.setPassword(passwordEncoder.encode(request.getPassword()));
             user.setProvider("manual");
 
             String code = VerificationCodeGenerator.generateCode();
@@ -51,14 +53,22 @@ public class RegistrationService {
             userDetailRepository.save(user);
             emailService.sendMail(user);
 
+
             return RegistrationResponse.builder()
                     .code(200)
-                    .message("User created!!")
+                    .message("User created!")
                     .build();
-        }
-        catch (Exception e) {
+
+
+        } catch (Exception e) {
             System.out.println(e.getMessage());
-            throw new ServerErrorException(e.getMessage(), e.getCause());
+            throw new ServerErrorException(e.getMessage(),e.getCause());
         }
+    }
+
+    public void verifyUser(String userName) {
+        User user= userDetailRepository.findByEmail(userName);
+        user.setEnabled(true);
+        userDetailRepository.save(user);
     }
 }
