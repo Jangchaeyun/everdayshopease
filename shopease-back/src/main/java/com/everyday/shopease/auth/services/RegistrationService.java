@@ -44,6 +44,7 @@ public class RegistrationService {
             user.setEmail(request.getEmail());
             user.setEnabled(false);
             user.setPassword(passwordEncoder.encode(request.getPassword()));
+            user.setPhoneNumber(request.getPhoneNumber());
             user.setProvider("manual");
 
             String code = VerificationCodeGenerator.generateCode();
@@ -51,8 +52,8 @@ public class RegistrationService {
             user.setVerificationCode(code);
             user.setAuthorities(authorityService.getUserAuthority());
             userDetailRepository.save(user);
-            emailService.sendMail(user);
 
+            emailService.sendMail(user);
 
             return RegistrationResponse.builder()
                     .code(200)

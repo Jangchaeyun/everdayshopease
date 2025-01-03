@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Map;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/api/auth")
 public class AuthController {
 
@@ -73,13 +74,11 @@ public class AuthController {
         String userName = map.get("userName");
         String code = map.get("code");
 
-        User user = (User) userDetailsService.loadUserByUsername(userName);
-
-        if (user != null && code.equals(user.getVerificationCode())) {
+        User user= (User) userDetailsService.loadUserByUsername(userName);
+        if(null != user && user.getVerificationCode().equals(code)){
             registrationService.verifyUser(userName);
             return new ResponseEntity<>(HttpStatus.OK);
         }
-
         return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
 }
