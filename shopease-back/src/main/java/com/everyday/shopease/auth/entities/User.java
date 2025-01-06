@@ -1,5 +1,6 @@
 package com.everyday.shopease.auth.entities;
 
+import com.everyday.shopease.entities.Address;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
@@ -49,6 +50,8 @@ public class User implements UserDetails {
     @JoinTable(name = "AUTH_USER_AUTHORITY",joinColumns = @JoinColumn(referencedColumnName = "id"),inverseJoinColumns = @JoinColumn(referencedColumnName = "id"))
     private List<Authority> authorities;
 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Address> addressList;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
