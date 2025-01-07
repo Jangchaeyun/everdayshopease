@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
 import content from "../../data/content.json";
@@ -45,6 +45,7 @@ const ProductDetails = () => {
   const cartItems = useSelector((state) => state.cartState?.cart);
   const [similarProduct, setSimilarProducts] = useState([]);
   const categories = useSelector((state) => state?.categoryState?.categories);
+  const [selectedSize, setSelectedSize] = useState("");
 
   const productCategory = useMemo(() => {
     return categories?.find((category) => category?.id === product?.categoryId);
@@ -80,7 +81,13 @@ const ProductDetails = () => {
       });
     }
     setBreadcrumbLinks(arrayLinks);
-  }, [productCategory, product]);
+  }, [productCategory, product, selectedSize]);
+
+  const addItemToCart = useCallback(() => {
+    // dispatch(addItemToCart({ id: product?.id, quantity: 1 }));
+    // const selectedSize =
+    console.log("size ", selectedSize);
+  }, []);
 
   const colors = useMemo(() => {
     const colorSet = _.uniq(_.map(product?.variants, "color"));
@@ -148,14 +155,24 @@ const ProductDetails = () => {
             </div>
           </div>
           <div className="mt-2">
-            <SizeFilter sizes={sizes} hidleTitle multi={false} />
+            <SizeFilter
+              onChange={(values) => {
+                setSelectedSize(values?.[0] ?? "");
+              }}
+              sizes={sizes}
+              hidleTitle
+              multi={true}
+            />
           </div>
           <div>
             <p className="text-lg">가능한 색상</p>
             <ProductColors colors={colors} />
           </div>
           <div className="flex py-4">
-            <button className="bg-black rounded-lg hover:bg-gray-700">
+            <button
+              onClick={addItemToCart}
+              className="bg-black rounded-lg hover:bg-gray-700"
+            >
               <div className="flex h-[42px] rounded-lg w-[150px] px-2 items-center justify-center bg-black text-white hover:bg-gray-700">
                 <svg
                   width="17"
