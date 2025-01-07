@@ -1,11 +1,9 @@
 package com.everyday.shopease.entities;
 
 import com.everyday.shopease.auth.entities.User;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.Date;
 import java.util.List;
@@ -28,10 +26,13 @@ public class Order {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
+    @JsonIgnore
     private User user;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "address_id", nullable = false)
+    @ToString.Exclude
+    @JsonIgnore
     private Address address;
 
     @Column(nullable = false)
@@ -52,10 +53,12 @@ public class Order {
     private Date expectedDeliveryDate;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "order", cascade = CascadeType.ALL)
+    @ToString.Exclude
     private List<OrderItem> orderItemList;
 
     private Double discount;
 
     @OneToOne(fetch = FetchType.LAZY, mappedBy = "order", cascade = CascadeType.ALL)
+    @ToString.Exclude
     private Payment payment;
 }

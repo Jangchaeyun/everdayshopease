@@ -51,6 +51,7 @@ public class User implements UserDetails {
     private List<Authority> authorities;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @ToString.Exclude
     private List<Address> addressList;
 
     @Override

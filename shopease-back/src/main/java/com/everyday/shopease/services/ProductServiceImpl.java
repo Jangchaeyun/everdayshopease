@@ -8,6 +8,7 @@ import com.everyday.shopease.exceptions.ResourceNotFoundEx;
 import com.everyday.shopease.mapper.ProductMapper;
 import com.everyday.shopease.repositories.ProductRepository;
 import com.everyday.shopease.specification.ProductSpecification;
+import org.apache.coyote.BadRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
@@ -83,5 +84,9 @@ public class ProductServiceImpl implements ProductService {
     public Product updateProduct(ProductDto productDto) {
         Product product = productRepository.findById(productDto.getId()).orElseThrow(() -> new ResourceNotFoundEx("Product not found!"));
         return productRepository.save(productMapper.mapToProductEntity(productDto));
+    }
+
+    public Product fetchProductById(UUID id) throws Exception {
+        return productRepository.findById(id).orElseThrow(BadRequestException::new);
     }
 }

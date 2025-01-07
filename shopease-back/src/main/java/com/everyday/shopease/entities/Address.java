@@ -1,11 +1,9 @@
 package com.everyday.shopease.entities;
 
 import com.everyday.shopease.auth.entities.User;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.UUID;
 
@@ -32,7 +30,12 @@ public class Address {
     @Column(nullable = false)
     private String zipCode;
 
+    @Column(nullable = false)
+    private String phoneNumber;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
+    @JsonIgnore
+    @ToString.Exclude
     private User user;
 }
