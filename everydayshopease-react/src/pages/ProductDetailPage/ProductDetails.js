@@ -15,6 +15,7 @@ import ProductCard from "../ProductListPage/ProductCard";
 import { useDispatch, useSelector } from "react-redux";
 import _ from "lodash";
 import { getAllProducts } from "../../api/fetchProducts";
+import { addItemToCartAction } from "../../store/actions/cartAction";
 
 // const categories = content?.categories;
 
@@ -46,6 +47,7 @@ const ProductDetails = () => {
   const [similarProduct, setSimilarProducts] = useState([]);
   const categories = useSelector((state) => state?.categoryState?.categories);
   const [selectedSize, setSelectedSize] = useState("");
+  const [error, setError] = useState("");
 
   const productCategory = useMemo(() => {
     return categories?.find((category) => category?.id === product?.categoryId);
@@ -87,7 +89,32 @@ const ProductDetails = () => {
     // dispatch(addItemToCart({ id: product?.id, quantity: 1 }));
     // const selectedSize =
     console.log("size ", selectedSize);
-  }, []);
+    if (!selectedSize) {
+      setError("사이즈를 선택해주세요!");
+    }
+    const selectedVariant = product?.variants?.filter(
+      (variant) => variant?.size === selectedSize
+    );
+    if (selectedVariant?.stockQuantity > 0) {
+      dispatch(
+        addItemToCartAction({
+          productId: product?.id,
+          thumbnail: product?.thumbnail,
+          variant: selectedVariant,
+          quantity: 1,
+          price: product?.price,
+        })
+      );
+    } else {
+      setError("재고가 없음!");
+    }
+  }, [selectedSize]);
+
+  useEffect(() => {
+    if (selectedSize) {
+      setError("");
+    }
+  }, [selectedSize]);
 
   const colors = useMemo(() => {
     const colorSet = _.uniq(_.map(product?.variants, "color"));
@@ -193,6 +220,7 @@ const ProductDetails = () => {
               </div>
             </button>
           </div>
+          {error && <p className="text-lg text-red-600">{error}</p>}
           <div className="grid grid-cols-2 gap-4 pt-4">
             {/*  */}
             {extraSections?.map((section) => (
