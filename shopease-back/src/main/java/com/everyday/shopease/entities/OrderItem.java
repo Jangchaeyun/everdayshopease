@@ -17,14 +17,15 @@ public class OrderItem {
     @GeneratedValue
     private UUID id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "product_id", nullable = false)
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "product_id",nullable = false)
+    @JsonIgnore
     private Product product;
 
     private UUID productVariantId;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "order_id", nullable = false)
+    @JoinColumn(name = "order_id",nullable = false)
     @JsonIgnore
     @ToString.Exclude
     private Order order;

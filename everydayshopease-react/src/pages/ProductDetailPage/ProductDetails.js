@@ -1,11 +1,9 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
-import content from "../../data/content.json";
 import Rating from "../../components/Rating/Rating";
 import SizeFilter from "../../components/Filters/SizeFilter";
 import ProductColors from "./ProductColors";
-import { CartIcon } from "../../components/common/CartIcon";
 import SvgCreditCard from "../../components/common/SvgCreditCard";
 import SvgCloth from "../../components/common/SvgCloth";
 import SvgShipping from "../../components/common/SizeShipping";
@@ -86,29 +84,33 @@ const ProductDetails = () => {
   }, [productCategory, product, selectedSize]);
 
   const addItemToCart = useCallback(() => {
-    // dispatch(addItemToCart({ id: product?.id, quantity: 1 }));
-    // const selectedSize =
+    //dispatch(addToCart({id:product?.id,quantity:1}));
+    //const selectedSize =
     console.log("size ", selectedSize);
     if (!selectedSize) {
-      setError("사이즈를 선택해주세요!");
-    }
-    const selectedVariant = product?.variants?.filter(
-      (variant) => variant?.size === selectedSize
-    );
-    if (selectedVariant?.stockQuantity > 0) {
-      dispatch(
-        addItemToCartAction({
-          productId: product?.id,
-          thumbnail: product?.thumbnail,
-          variant: selectedVariant,
-          quantity: 1,
-          price: product?.price,
-        })
-      );
+      setError("사이즈를 선택해주세요");
     } else {
-      setError("재고가 없음!");
+      const selectedVariant = product?.variants?.filter(
+        (variant) => variant?.size === selectedSize
+      )?.[0];
+      console.log("selected ", selectedVariant);
+      if (selectedVariant?.stockQuantity > 0) {
+        dispatch(
+          addItemToCartAction({
+            productId: product?.id,
+            thumbnail: product?.thumbnail,
+            name: product?.name,
+            variant: selectedVariant,
+            quantity: 1,
+            subTotal: product?.price,
+            price: product?.price,
+          })
+        );
+      } else {
+        setError("Out of Stock");
+      }
     }
-  }, [selectedSize]);
+  }, [dispatch, product, selectedSize]);
 
   useEffect(() => {
     if (selectedSize) {
@@ -188,7 +190,7 @@ const ProductDetails = () => {
               }}
               sizes={sizes}
               hidleTitle
-              multi={true}
+              multi={false}
             />
           </div>
           <div>
