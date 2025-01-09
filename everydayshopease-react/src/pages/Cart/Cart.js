@@ -1,11 +1,35 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useCallback } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { selectCartItems } from "../../store/features/cart";
+import NumberInput from "../../components/NumberInput/NumberInput";
+import { updateItemToCartAction } from "../../store/actions/cartAction";
+import DeleteIcon from "../../components/common/DeleteIcon";
 
 const headers = ["제품 상세", "가격", "수량", "배송비", "소계", "액션"];
 
 const Cart = () => {
   const cartItems = useSelector(selectCartItems);
+  const dispatch = useDispatch();
+
+  const onChangeQuantity = useCallback(
+    (value, productId, variantId) => {
+      console.log("Received ", value);
+
+      dispatch(
+        updateItemToCartAction({
+          productId: productId,
+          variant_id: variantId,
+          quantity: value,
+        })
+      );
+    },
+    [dispatch]
+  );
+
+  const onDeleteProduct = useCallback((productId, variantId) => {
+    
+  }, []);
+
   return (
     <div className="p-4">
       <p className='tex-sm text-black p-4"'>장바구니</p>
@@ -44,9 +68,34 @@ const Cart = () => {
                     {item?.price.toLocaleString()}원
                   </p>
                 </td>
-                <td></td>
+                <td>
+                  <NumberInput
+                    max={2}
+                    quantity={item?.quantity}
+                    onChangeQuantity={(value) =>
+                      onChangeQuantity(
+                        value,
+                        item?.productId,
+                        item?.variant?.id
+                      )
+                    }
+                  />
+                </td>
                 <td>
                   <p className="text-center text-sm text-gray-600">무료배송</p>
+                </td>
+                <td>
+                  <p className="text-center text-sm text-gray-600">
+                    {item?.subTotal.toLocaleString()}원
+                  </p>
+                </td>
+                <td>
+                  <button
+                    className="flex items-center w-full justify-center"
+                    onClick={() => onDeleteProduct(item?.id, item?.variant?.id)}
+                  >
+                    <DeleteIcon />
+                  </button>
                 </td>
               </tr>
             );
