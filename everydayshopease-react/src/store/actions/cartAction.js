@@ -1,4 +1,4 @@
-import { addToCart, updateQuantity } from "../features/cart";
+import { addToCart, removeFromCart, updateQuantity } from "../features/cart";
 
 export const addItemToCartAction = (productItem) => {
   return (dispatch, state) => {
@@ -15,6 +15,13 @@ export const updateItemToCartAction = (productItem) => {
         quantity: productItem?.quantity,
       })
     );
+    updateLocalStorage(state);
+  };
+};
+
+export const deleteItemFromCartAction = (payload) => {
+  return (dispatch, state) => {
+    dispatch(removeFromCart(payload));
     updateLocalStorage(state);
   };
 };
