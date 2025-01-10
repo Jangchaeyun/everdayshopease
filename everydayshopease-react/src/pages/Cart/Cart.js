@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectCartItems } from "../../store/features/cart";
 import NumberInput from "../../components/NumberInput/NumberInput";
@@ -9,6 +9,8 @@ import {
 import DeleteIcon from "../../components/common/DeleteIcon";
 import Modal from "react-modal";
 import { customStyles } from "../../styles/modal";
+import { isTokenValid } from "../../utils/jwt-helper";
+import { Link } from "react-router-dom";
 
 const headers = ["제품 상세", "가격", "수량", "배송비", "소계", "액션"];
 
@@ -50,10 +52,24 @@ const Cart = () => {
     dispatch(deleteItemFromCartAction(deleteItem));
     setModalIsOpen(false);
   }, [deleteItem, dispatch]);
+
+  const subTotal = useMemo(() => {
+    let value = 0;
+    cartItems?.forEach((element) => {
+      value += element?.subTotal;
+    });
+    return value;
+  }, [cartItems]);
+
+  const isLoggedIn = useMemo(() => {
+    return isTokenValid();
+  }, []);
+
+  console.log("isLoggedin ", isLoggedIn, isTokenValid());
   return (
     <>
       <div className="p-4">
-        <p className='tex-sm text-black p-4"'>장바구니</p>
+        <p className='text-xl text-black p-4"'>장바구니</p>
         <table className="w-full text-lg">
           <thead className="text-sm bg-black text-white uppercase">
             <tr>
@@ -69,9 +85,9 @@ const Cart = () => {
           <tbody>
             {cartItems?.map((item, index) => {
               return (
-                <tr className="p-4">
+                <tr className="p-4 bg-white border-b">
                   <td>
-                    <div className="flex">
+                    <div className="flex p-4">
                       <img
                         src={item?.thumbnail}
                         alt={"product-" + index}
@@ -122,11 +138,56 @@ const Cart = () => {
                       <DeleteIcon />
                     </button>
                   </td>
+                  <hr className="h-4 bg-gray-400"></hr>
                 </tr>
               );
             })}
           </tbody>
         </table>
+        <div className="flex justify-between bg-gray-200 p-8">
+          <div>
+            <p className="text-lg font-bold">할인 쿠폰</p>
+            <p className="text-sm text-gray-600">쿠폰 코드 입력</p>
+            <form>
+              <input
+                type="text"
+                className="w-[120px] h-[48px]  mt-2 border-gray-500 rounded-lg p-2 hover:outline-none"
+                placeholder="쿠폰 코드 입력"
+              />
+              <button className="w-[80px] h-[48px] bg-black border rounded-lg text-white">
+                적용
+              </button>
+            </form>
+          </div>
+          <div className="mr-20 pr-8">
+            <div className="flex gap-8 text-lg">
+              <p className="w-[120px]">소계</p>
+              <p>{subTotal.toLocaleString()}원</p>
+            </div>
+            <div className="flex gap-8 text-lg mt-2">
+              <p className="w-[120px]">배송비</p>
+              <p>0원</p>
+            </div>
+            <div className="flex gap-8 text-lg mt-2 font-bold">
+              <p className="w-[120px]">총 가격</p>
+              <p>{subTotal.toLocaleString()}원</p>
+            </div>
+            <hr className="h-[2px] bg-slate-400 mt-2"></hr>
+            {isLoggedIn && (
+              <button className="w-full items-center h-[48px] bg-black border rounded-lg mt-2 text-white hover:bg-gray-800">
+                결제하기
+              </button>
+            )}
+            {!isLoggedIn && (
+              <Link
+                to={"/v1/login"}
+                className="w-full p-2 items-center h-[48px] bg-black border rounded-lg mt-4 text-white hover:bg-gray-800"
+              >
+                로그인 후 결제하기
+              </Link>
+            )}
+          </div>
+        </div>
       </div>
       <Modal
         isOpen={modalIsOpen}
