@@ -1,5 +1,5 @@
 import React, { useCallback, useMemo, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector} from "react-redux";
 import { selectCartItems } from "../../store/features/cart";
 import NumberInput from "../../components/NumberInput/NumberInput";
 import {
@@ -10,7 +10,7 @@ import DeleteIcon from "../../components/common/DeleteIcon";
 import Modal from "react-modal";
 import { customStyles } from "../../styles/modal";
 import { isTokenValid } from "../../utils/jwt-helper";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import EmptyCart from "../../assets/img/empty_cart.png";
 
 const headers = ["제품 상세", "가격", "수량", "배송비", "소계", "액션"];
@@ -20,6 +20,7 @@ const Cart = () => {
   const dispatch = useDispatch();
   const [modalIsOpen, setModalIsOpen] = React.useState(false);
   const [deleteItem, setDeleteItem] = useState({});
+  const navigate = useNavigate();
 
   const onChangeQuantity = useCallback(
     (value, productId, variantId) => {
@@ -177,7 +178,7 @@ const Cart = () => {
                 </div>
                 <hr className="h-[2px] bg-slate-400 mt-2"></hr>
                 {isLoggedIn && (
-                  <button className="w-full items-center h-[48px] bg-black border rounded-lg mt-2 text-white hover:bg-gray-800">
+                  <button className="w-full items-center h-[48px] bg-black border rounded-lg mt-2 text-white hover:bg-gray-800" onClick={() => navigate("/checkout")}>
                     결제하기
                   </button>
                 )}

@@ -11,6 +11,7 @@ import OAuth2LoginCallback from "./pages/OAuth2LoginCallback";
 import Cart from "./pages/Cart/Cart";
 import Account from "./pages/Account/Account";
 import ProctedRoute from "./components/ProctedRoute/ProctedRoute";
+import Checkout from "./pages/Checkout/Checkout";
 
 export const router = createBrowserRouter([
   {
@@ -47,6 +48,14 @@ export const router = createBrowserRouter([
         element: (
           <ProctedRoute>
             <Account />
+          </ProctedRoute>
+        ),
+      },
+      {
+        path: "/checkout",
+        element: (
+          <ProctedRoute>
+            <Checkout />
           </ProctedRoute>
         ),
       },
