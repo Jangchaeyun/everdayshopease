@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import "../Navigation/Navigation.css";
 import { CartIcon } from "../common/CartIcon";
 import { AccountIcon } from "../common/AccountIcon";
@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 import { countCartItems } from "../../store/features/cart";
 const Navigation = ({ varaint = "default" }) => {
   const cartLength = useSelector(countCartItems);
+  const navigate = useNavigate();
   return (
     <nav className="flex items-center py-6 px-16 justify-between gap-40">
       <div className="flex items-center gap-6">
@@ -87,7 +88,7 @@ const Navigation = ({ varaint = "default" }) => {
               </button>
             </li>
             <li>
-              <button>
+              <button onClick={() => navigate("/account-details")}>
                 <AccountIcon />
               </button>
             </li>
