@@ -3,11 +3,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectCartItems } from "../../store/features/cart";
 import { setLoading } from "../../store/features/common";
 import { fetchUserDetails } from "../../api/userInfo";
+import { useNavigate } from "react-router-dom";
+import PaymentPage from "../PaymentPage/PaymentPage";
 
 const Checkout = () => {
   const cartItems = useSelector(selectCartItems);
   const dispatch = useDispatch();
   const [userInfo, setUserInfo] = useState([]);
+  const navigate = useNavigate();
 
   const subTotal = useMemo(() => {
     let value = 0;
@@ -81,9 +84,14 @@ const Checkout = () => {
             </div>
           </div>
         </div>
-        <button className="w-[150px] items-center h-[48px] bg-black border rounded-lg mt-4 text-white hover:bg-gray-800">
-          결제하기
-        </button>
+        <PaymentPage>
+          <button
+            className="w-[150px] items-center h-[48px] bg-black border rounded-lg mt-4 text-white hover:bg-gray-800"
+            onClick={() => navigate("/payment")}
+          >
+            결제하기
+          </button>
+        </PaymentPage>
       </div>
       <div className="w-[30%] h-[30%] border rounded-lg border-gray-500 p-4 flex flex-col gap-4">
         <p>주문 요약</p>

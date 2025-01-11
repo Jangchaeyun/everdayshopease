@@ -12,6 +12,7 @@ import Cart from "./pages/Cart/Cart";
 import Account from "./pages/Account/Account";
 import ProctedRoute from "./components/ProctedRoute/ProctedRoute";
 import Checkout from "./pages/Checkout/Checkout";
+import PaymentPage from "./pages/PaymentPage/PaymentPage";
 
 export const router = createBrowserRouter([
   {
@@ -56,6 +57,14 @@ export const router = createBrowserRouter([
         element: (
           <ProctedRoute>
             <Checkout />
+          </ProctedRoute>
+        ),
+      },
+      {
+        path: "/payment",
+        element: (
+          <ProctedRoute>
+            <PaymentPage />
           </ProctedRoute>
         ),
       },
