@@ -1,5 +1,6 @@
 package com.everyday.shopease.services;
 
+import com.everyday.shopease.auth.dto.OrderResponse;
 import com.everyday.shopease.auth.entities.User;
 import com.everyday.shopease.dto.OrderRequest;
 import com.everyday.shopease.entities.*;
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Service;
 import java.security.Principal;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class OrderService {
@@ -26,8 +28,11 @@ public class OrderService {
     @Autowired
     ProductService productService;
 
+    @Autowired
+    private PaymentIntentService paymentIntentService;
+
     @Transactional
-    public Order createOrder(OrderRequest orderRequest, Principal principal) throws Exception {
+    public OrderResponse createOrder(OrderRequest orderRequest, Principal principal) throws Exception {
         User user = (User) userDetailsService.loadUserByUsername(principal.getName());
         Address address = user.getAddressList().stream().filter(address1 -> orderRequest.getAddressId().equals(address1.getId())).findFirst().orElseThrow(BadRequestException::new);
 
@@ -64,7 +69,18 @@ public class OrderService {
         payment.setAmount(order.getTotalAmount());
         payment.setPaymentMethod(order.getPaymentMethod());
         order.setPayment(payment);
+        Order savedOrder = orderRepository.save(order);
 
-        return orderRepository.save(order);
+
+        OrderResponse orderResponse = OrderResponse.builder()
+                .paymentMethod(orderRequest.getPaymentMethod())
+                .orderId(savedOrder.getId())
+                .build();
+        if(Objects.equals(orderRequest.getPaymentMethod(), "CARD")){
+            orderResponse.setCredentials(paymentIntentService.createPaymentIntent(order));
+        }
+
+        return orderResponse;
+
     }
 }

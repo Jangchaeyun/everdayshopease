@@ -1,5 +1,5 @@
 import React, { useCallback, useMemo, useState } from "react";
-import { useDispatch, useSelector} from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { selectCartItems } from "../../store/features/cart";
 import NumberInput from "../../components/NumberInput/NumberInput";
 import {
@@ -178,7 +178,10 @@ const Cart = () => {
                 </div>
                 <hr className="h-[2px] bg-slate-400 mt-2"></hr>
                 {isLoggedIn && (
-                  <button className="w-full items-center h-[48px] bg-black border rounded-lg mt-2 text-white hover:bg-gray-800" onClick={() => navigate("/checkout")}>
+                  <button
+                    className="w-full items-center h-[48px] bg-black border rounded-lg mt-2 text-white hover:bg-gray-800"
+                    onClick={() => navigate("/checkout")}
+                  >
                     결제하기
                   </button>
                 )}

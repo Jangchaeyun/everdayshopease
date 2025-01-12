@@ -11,6 +11,7 @@ const Checkout = () => {
   const dispatch = useDispatch();
   const [userInfo, setUserInfo] = useState([]);
   const navigate = useNavigate();
+  const [paymentMethod, setPaymentMethod] = useState("");
 
   const subTotal = useMemo(() => {
     let value = 0;
@@ -71,27 +72,48 @@ const Checkout = () => {
           <p className="font-bold">결제 정보</p>
           <div className="mt-4 flex flex-col gap-4">
             <div className="flex gap-2">
-              <input type="radio" name="결제 방법" />
+              <input
+                type="radio"
+                name="결제 방법"
+                value={"CARD"}
+                onChange={() => setPaymentMethod("CARD")}
+              />
               <p>신용/체크 카드</p>
             </div>
             <div className="flex gap-2">
-              <input type="radio" name="결제 방법" />
+              <input
+                type="radio"
+                name="결제 방법"
+                value={"COD"}
+                onChange={() => setPaymentMethod("COD")}
+              />
               <p>착불 결제</p>
             </div>
             <div className="flex gap-2">
-              <input type="radio" name="결제 방법" />
+              <input
+                type="radio"
+                name="결제 방법"
+                value={"UPI"}
+                onChange={() => setPaymentMethod("UPI")}
+              />
               <p>UPI/지갑</p>
             </div>
           </div>
         </div>
-        <PaymentPage>
+        {paymentMethod === "CARD" && (
+          <PaymentPage
+            userid={userInfo?.id}
+            addressId={userInfo?.addressList?.[0]?.id}
+          />
+        )}
+        {paymentMethod !== "CARD" && (
           <button
             className="w-[150px] items-center h-[48px] bg-black border rounded-lg mt-4 text-white hover:bg-gray-800"
             onClick={() => navigate("/payment")}
           >
             결제하기
           </button>
-        </PaymentPage>
+        )}
       </div>
       <div className="w-[30%] h-[30%] border rounded-lg border-gray-500 p-4 flex flex-col gap-4">
         <p>주문 요약</p>

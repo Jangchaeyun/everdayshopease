@@ -7,7 +7,7 @@ const stripePromise = loadStripe(
   "pk_test_51Qg3pACpsv5WLFk0lfHloVZ8h54knKi5uXaq2qLLTJYrBAzZTKfu0HWnooJIVulzgYLWMDQ78zem7EAJ2JgHSDJw00SylIccFc"
 );
 
-const PaymentPage = ({ children }) => {
+const PaymentPage = (props) => {
   const options = {
     mode: "payment",
     amount: 1000,
@@ -19,7 +19,7 @@ const PaymentPage = ({ children }) => {
   return (
     <div>
       <Elements stripe={stripePromise} options={options}>
-        <CheckoutForm children={children} />
+        <CheckoutForm {...props} />
       </Elements>
     </div>
   );
