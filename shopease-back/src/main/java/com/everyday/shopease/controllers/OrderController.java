@@ -13,6 +13,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/order")
@@ -28,5 +29,11 @@ public class OrderController {
 //        return new ResponseEntity<>(order, HttpStatus.CREATED);
 
         return new ResponseEntity<>(orderResponse, HttpStatus.OK);
+    }
+
+    @PostMapping("/update-payment")
+    public ResponseEntity<?> updatePaymentStatus(@RequestBody Map<String, String> request) {
+        orderService.updateStatus(request.get("paymentIntent"), request.get("status"));
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }

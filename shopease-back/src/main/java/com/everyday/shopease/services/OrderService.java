@@ -5,6 +5,8 @@ import com.everyday.shopease.auth.entities.User;
 import com.everyday.shopease.dto.OrderRequest;
 import com.everyday.shopease.entities.*;
 import com.everyday.shopease.repositories.OrderRepository;
+import com.stripe.exception.StripeException;
+import com.stripe.model.PaymentIntent;
 import jakarta.transaction.Transactional;
 import org.apache.coyote.BadRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,9 +14,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 
 import java.security.Principal;
-import java.util.Date;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 @Service
 public class OrderService {
@@ -82,5 +82,26 @@ public class OrderService {
 
         return orderResponse;
 
+    }
+
+    public void updateStatus(String paymentIntentId, String status) {
+        try {
+            PaymentIntent paymentIntent = PaymentIntent.retrieve(paymentIntentId);
+            if (paymentIntent != null && paymentIntent.getStatus().equals("succeeded")) {
+                String orderId = paymentIntent.getMetadata().get("orderId");
+                Order order = orderRepository.findById(UUID.fromString(orderId)).orElseThrow(BadRequestException::new);
+                Payment payment = order.getPayment();
+                payment.setPaymentStatus(PaymentStatus.COMPLETED);
+                payment.setPaymentMethod(paymentIntent.getPaymentMethod());
+                order.setPaymentMethod(paymentIntent.getPaymentMethod());
+                order.setPayment(payment);
+                orderRepository.save(order);
+            }
+            else {
+                throw new IllegalArgumentException("Payment not found or missing metadata");
+            }
+        } catch (Exception e) {
+            throw new IllegalArgumentException("Payment not found or missing metadata");
+        }
     }
 }
