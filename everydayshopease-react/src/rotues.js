@@ -15,6 +15,9 @@ import Checkout from "./pages/Checkout/Checkout";
 import PaymentPage from "./pages/PaymentPage/PaymentPage";
 import ConfirmPayment from "./pages/ConfirmPayment/ConfirmPayment";
 import OrderConfirmed from "./pages/OrderConfirmed/OrderConfirmed";
+import Profile from "./pages/Account/Profile";
+import Orders from "./pages/Account/Orders";
+import Settings from "./pages/Account/Settings";
 
 export const router = createBrowserRouter([
   {
@@ -53,6 +56,32 @@ export const router = createBrowserRouter([
             <Account />
           </ProctedRoute>
         ),
+        children: [
+          {
+            path: "profile",
+            element: (
+              <ProctedRoute>
+                <Profile />
+              </ProctedRoute>
+            ),
+          },
+          {
+            path: "orders",
+            element: (
+              <ProctedRoute>
+                <Orders />
+              </ProctedRoute>
+            ),
+          },
+          {
+            path: "settings",
+            element: (
+              <ProctedRoute>
+                <Settings />
+              </ProctedRoute>
+            ),
+          },
+        ],
       },
       {
         path: "/checkout",

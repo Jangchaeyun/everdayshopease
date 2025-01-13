@@ -4,35 +4,39 @@
 
 body {
   margin: 0;
-  font-family: "kyobo";
+  font-family: "Ownglyph_meetme-Rg";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 @font-face {
-  font-family: "kyobo";
-  font-style: normal;
+  font-family: "Ownglyph_meetme-Rg";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_1@1.0/Ownglyph_meetme-Rg.woff2")
+    format("woff2");
   font-weight: 200;
-  src: url(assets/fonts/KyoboHandwriting2019.ttf);
+  font-style: normal;
 }
 
 @font-face {
-  font-family: "kyobo";
-  font-style: normal;
+  font-family: "Ownglyph_meetme-Rg";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_1@1.0/Ownglyph_meetme-Rg.woff2")
+    format("woff2");
   font-weight: 300;
-  src: url(assets/fonts/KyoboHandwriting2019.ttf);
+  font-style: normal;
 }
 
 @font-face {
-  font-family: "kyobo";
-  font-style: normal;
+  font-family: "Ownglyph_meetme-Rg";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_1@1.0/Ownglyph_meetme-Rg.woff2")
+    format("woff2");
   font-weight: 400;
-  src: url(assets/fonts/KyoboHandwriting2019.ttf);
+  font-style: normal;
 }
 
 @font-face {
-  font-family: "kyobo";
-  font-style: normal;
+  font-family: "Ownglyph_meetme-Rg";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_1@1.0/Ownglyph_meetme-Rg.woff2")
+    format("woff2");
   font-weight: 700;
-  src: url(assets/fonts/KyoboHandwriting2019.ttf);
+  font-style: normal;
 }
