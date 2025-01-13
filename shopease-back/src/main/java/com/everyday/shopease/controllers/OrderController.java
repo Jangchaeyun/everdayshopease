@@ -33,7 +33,7 @@ public class OrderController {
 
     @PostMapping("/update-payment")
     public ResponseEntity<?> updatePaymentStatus(@RequestBody Map<String, String> request) {
-        orderService.updateStatus(request.get("paymentIntent"), request.get("status"));
-        return new ResponseEntity<>(HttpStatus.OK);
+        Map<String, String> response = orderService.updateStatus(request.get("paymentIntent"), request.get("status"));
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 }

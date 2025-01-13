@@ -84,7 +84,7 @@ public class OrderService {
 
     }
 
-    public void updateStatus(String paymentIntentId, String status) {
+    public Map<String, String> updateStatus(String paymentIntentId, String status) {
         try {
             PaymentIntent paymentIntent = PaymentIntent.retrieve(paymentIntentId);
             if (paymentIntent != null && paymentIntent.getStatus().equals("succeeded")) {
@@ -95,7 +95,11 @@ public class OrderService {
                 payment.setPaymentMethod(paymentIntent.getPaymentMethod());
                 order.setPaymentMethod(paymentIntent.getPaymentMethod());
                 order.setPayment(payment);
-                orderRepository.save(order);
+                Order savedOrder = orderRepository.save(order);
+                Map<String, String> map = new HashMap<>();
+                map.put("orderId", String.valueOf(savedOrder.getId()));
+
+                return map;
             }
             else {
                 throw new IllegalArgumentException("Payment not found or missing metadata");

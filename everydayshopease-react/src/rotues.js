@@ -14,6 +14,7 @@ import ProctedRoute from "./components/ProctedRoute/ProctedRoute";
 import Checkout from "./pages/Checkout/Checkout";
 import PaymentPage from "./pages/PaymentPage/PaymentPage";
 import ConfirmPayment from "./pages/ConfirmPayment/ConfirmPayment";
+import OrderConfirmed from "./pages/OrderConfirmed/OrderConfirmed";
 
 export const router = createBrowserRouter([
   {
@@ -60,6 +61,10 @@ export const router = createBrowserRouter([
             <Checkout />
           </ProctedRoute>
         ),
+      },
+      {
+        path: "/orderConfirmed",
+        element: <OrderConfirmed />,
       },
     ],
   },
