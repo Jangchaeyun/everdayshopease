@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { selectUserInfo } from "../../store/features/user";
+import AddAddress from "./AddAddress";
 
 const Profile = () => {
   const userInfo = useSelector(selectUserInfo);
@@ -31,7 +32,10 @@ const Profile = () => {
           <div className="pt-4">
             <div className="flex gap-12">
               <h3 className="text-lg font-bold">주소</h3>
-              <button className="underline text-blue-500">
+              <button
+                className="underline text-blue-900"
+                onClick={() => setAddAddress(true)}
+              >
                 새로운 주소 추가
               </button>
             </div>
@@ -59,6 +63,7 @@ const Profile = () => {
           </div>
         </div>
       )}
+      {addAddress && <AddAddress onCancel={() => setAddAddress(false)} />}
     </div>
   );
 };
