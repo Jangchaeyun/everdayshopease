@@ -1,11 +1,29 @@
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
-import { selectUserInfo } from "../../store/features/user";
+import React, { useCallback, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { removeAddress, selectUserInfo } from "../../store/features/user";
 import AddAddress from "./AddAddress";
+import { setLoading } from "../../store/features/common";
+import { deleteAddressAPI } from "../../api/userInfo";
 
 const Profile = () => {
   const userInfo = useSelector(selectUserInfo);
   const [addAddress, setAddAddress] = useState(false);
+  const disaptch = useDispatch();
+
+  const onDeleteAddress = useCallback(
+    (id) => {
+      disaptch(setLoading(true));
+      deleteAddressAPI(id)
+        .then((res) => {
+          disaptch(removeAddress(id));
+        })
+        .catch((err) => {})
+        .finally(() => {
+          disaptch(setLoading(false));
+        });
+    },
+    [disaptch]
+  );
 
   return (
     <div>
@@ -54,7 +72,12 @@ const Profile = () => {
                     <p>{address?.zipCode}</p>
                     <div className="flex gap-2">
                       <button className="underline text-blue-900">수정</button>
-                      <button className="underline text-blue-900">삭제</button>
+                      <button
+                        onClick={() => onDeleteAddress(address?.id)}
+                        className="underline text-blue-900"
+                      >
+                        삭제
+                      </button>
                     </div>
                   </div>
                 );
