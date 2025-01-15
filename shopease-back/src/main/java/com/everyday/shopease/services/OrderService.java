@@ -2,6 +2,8 @@ package com.everyday.shopease.services;
 
 import com.everyday.shopease.auth.dto.OrderResponse;
 import com.everyday.shopease.auth.entities.User;
+import com.everyday.shopease.dto.OrderDetails;
+import com.everyday.shopease.dto.OrderItemDetail;
 import com.everyday.shopease.dto.OrderRequest;
 import com.everyday.shopease.entities.*;
 import com.everyday.shopease.repositories.OrderRepository;
@@ -107,5 +109,36 @@ public class OrderService {
         } catch (Exception e) {
             throw new IllegalArgumentException("Payment not found or missing metadata");
         }
+    }
+
+    public List<OrderDetails> getOrdersByUser(String name) {
+        User user = (User) userDetailsService.loadUserByUsername(name);
+        List<Order> orders = orderRepository.findByUser(user);
+
+        return orders.stream().map(order -> {
+            return OrderDetails.builder()
+                    .id(order.getId())
+                    .orderDate(order.getOrderDate())
+                    .orderStatus(order.getOrderStatus())
+                    .shipmentNumber(order.getShipmentTrackingNumber())
+                    .address(order.getAddress())
+                    .totalAmount(order.getTotalAmount())
+                    .orderItemList(getItemDetails(order.getOrderItemList()))
+                    .expectedDeliveryDate(order.getExpectedDeliveryDate())
+                    .build();
+        }).toList();
+    }
+
+    private List<OrderItemDetail> getItemDetails(List<OrderItem> orderItemList) {
+        return orderItemList.stream().map(orderItem -> {
+            return OrderItemDetail.builder()
+                    .id(orderItem.getId())
+                    .itemPrice(orderItem.getItemPrice())
+                    .product(orderItem.getProduct())
+                    .productVariantId(orderItem.getProductVariantId())
+                    .quantity(orderItem.getQuantity())
+                    .build();
+                }
+        ).toList();
     }
 }
