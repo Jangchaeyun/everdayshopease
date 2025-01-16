@@ -1,8 +1,12 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setLoading } from "../../store/features/common";
-import { fetchOrderAPI } from "../../api/userInfo";
-import { loadOrders, selectAllOrders } from "../../store/features/user";
+import { cancelOrderAPI, fetchOrderAPI } from "../../api/userInfo";
+import {
+  cancelOrder,
+  loadOrders,
+  selectAllOrders,
+} from "../../store/features/user";
 import moment from "moment";
 import Timeline from "../../components/TimeLine/TimeLine";
 import { getStepCount } from "../../utils/order-utils";
@@ -62,6 +66,21 @@ const Orders = () => {
     setSelectedFilter(value);
   }, []);
 
+  const onCancelOrder = useCallback(
+    (id) => {
+      disaptch(setLoading(true));
+      cancelOrderAPI(id)
+        .then((res) => {
+          disaptch(cancelOrder(id));
+        })
+        .catch((err) => {})
+        .finally(() => {
+          disaptch(setLoading(false));
+        });
+    },
+    [disaptch]
+  );
+
   return (
     <div>
       {orders?.length > 0 && (
@@ -74,7 +93,7 @@ const Orders = () => {
               onChange={handleOnChange}
             >
               <option value={"ACTIVE"}>주문</option>
-              <option value={"CANCELED"}>취소</option>
+              <option value={"CANCELLED"}>취소</option>
               <option value={"COMPLETED"}>완료</option>
             </select>
           </div>
@@ -141,8 +160,10 @@ const Orders = () => {
                           />
                           {getStepCount[order?.orderStatus] <= 2 && (
                             <button
-                              onClick={() => setSelectedOrder("")}
-                              className="bg-black h-[42px] w-[120px] text-white rounded underline cursor-pointer rounded-lg"
+                              onClick={() =>
+                                setSelectedOrder(onCancelOrder(order?.id))
+                              }
+                              className="bg-black h-[42px] w-[120px] text-white underline cursor-pointer rounded-lg"
                             >
                               주문 취소
                             </button>

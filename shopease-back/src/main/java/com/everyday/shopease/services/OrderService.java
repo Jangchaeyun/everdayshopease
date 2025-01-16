@@ -12,6 +12,7 @@ import com.stripe.model.PaymentIntent;
 import jakarta.transaction.Transactional;
 import org.apache.coyote.BadRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 
@@ -141,5 +142,17 @@ public class OrderService {
                     .build();
                 }
         ).toList();
+    }
+
+    public void cancelOrder(UUID id, Principal principal) {
+        User user = (User) userDetailsService.loadUserByUsername(principal.getName());
+        Order order = orderRepository.findById(id).get();
+        if (null != order && order.getUser().getId().equals(user.getId())) {
+            order.setOrderStatus(OrderStatus.CANCELLED);
+            orderRepository.save(order);
+        }
+        else {
+            new RuntimeException("Invalid request");
+        }
     }
 }
