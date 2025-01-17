@@ -37,7 +37,6 @@ public class RegistrationService {
         }
 
         try{
-
             User user = new User();
             user.setFirstName(request.getFirstName());
             user.setLastName(request.getLastName());
@@ -52,8 +51,8 @@ public class RegistrationService {
             user.setVerificationCode(code);
             user.setAuthorities(authorityService.getUserAuthority());
             userDetailRepository.save(user);
-
             emailService.sendMail(user);
+
 
             return RegistrationResponse.builder()
                     .code(200)

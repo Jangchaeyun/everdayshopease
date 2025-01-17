@@ -16,14 +16,13 @@ public class AuthorityService {
 
     public List<Authority> getUserAuthority(){
         List<Authority> authorities=new ArrayList<>();
-        Authority authority= authorityRepository.findByRoleCode("USER");
+        Authority authority = authorityRepository.findByRoleCode("ADMIN");
         authorities.add(authority);
-
         return  authorities;
     }
 
-    public Authority createAuthority(String role, String description){
-        Authority authority= Authority.builder().roleCode(role).roleDescription(description).build();
+    public Authority createAuthority(String role, String description) {
+        Authority authority = Authority.builder().roleCode(role).roleDescription(description).build();
         return authorityRepository.save(authority);
     }
 }

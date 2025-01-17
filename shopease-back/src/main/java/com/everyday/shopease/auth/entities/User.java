@@ -54,6 +54,7 @@ public class User implements UserDetails {
     @ToString.Exclude
     private List<Address> addressList;
 
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return authorities;

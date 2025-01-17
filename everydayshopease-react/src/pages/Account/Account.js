@@ -4,12 +4,17 @@ import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setLoading } from "../../store/features/common";
 import { fetchUserDetails } from "../../api/userInfo";
-import { loadUserInfo, selectUserInfo } from "../../store/features/user";
+import {
+  loadUserInfo,
+  selecrIsUserAdmin,
+  selectUserInfo,
+} from "../../store/features/user";
 
 const Account = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const userInfo = useSelector(selectUserInfo);
+  const isUserAdmin = useSelector(selecrIsUserAdmin);
 
   useEffect(() => {
     dispatch(setLoading(true));
@@ -24,6 +29,13 @@ const Account = () => {
   }, []);
   return (
     <div className="p-8">
+      {isUserAdmin && (
+        <div className="text-right">
+          <Link to={"/admin"} className="text-lg text-blue-900 underline">
+            관리자 관리
+          </Link>
+        </div>
+      )}
       {userInfo?.email && (
         <>
           <p className="text-xl font-bold">Hello {userInfo?.lastName}</p>
