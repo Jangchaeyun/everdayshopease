@@ -18,29 +18,29 @@ public class CategoryService {
     @Autowired
     private CategoryRepository categoryRepository;
 
-    public Category getCategory(UUID categoryId) {
+    public Category getCategory(UUID categoryId){
         Optional<Category> category = categoryRepository.findById(categoryId);
         return category.orElse(null);
     }
 
-    public Category createCategory(CategoryDto categoryDto) {
+    public Category createCategory(CategoryDto categoryDto){
         Category category = mapToEntity(categoryDto);
         return categoryRepository.save(category);
     }
 
-    private Category mapToEntity(CategoryDto categoryDto) {
+    private Category mapToEntity(CategoryDto categoryDto){
         Category category = Category.builder()
                 .code(categoryDto.getCode())
                 .name(categoryDto.getName())
                 .description(categoryDto.getDescription())
                 .build();
 
-        if (null != categoryDto.getCategoryTypeList()) {
-            List<CategoryType> categoryTypes = mapToCategoryTypesList(categoryDto.getCategoryTypeList(), category);
+        if(null != categoryDto.getCategoryTypes()){
+            List<CategoryType> categoryTypes = mapToCategoryTypesList(categoryDto.getCategoryTypes(),category);
             category.setCategoryTypes(categoryTypes);
         }
 
-        return category;
+        return  category;
     }
 
     private List<CategoryType> mapToCategoryTypesList(List<CategoryTypeDto> categoryTypeList, Category category) {
@@ -53,6 +53,7 @@ public class CategoryService {
             return categoryType;
         }).collect(Collectors.toList());
     }
+
 
     public List<Category> getAllCategory() {
         return categoryRepository.findAll();
@@ -75,8 +76,8 @@ public class CategoryService {
         List<CategoryType> existing = category.getCategoryTypes();
         List<CategoryType> list= new ArrayList<>();
 
-        if(categoryDto.getCategoryTypeList() != null){
-            categoryDto.getCategoryTypeList().forEach(categoryTypeDto -> {
+        if(categoryDto.getCategoryTypes() != null){
+            categoryDto.getCategoryTypes().forEach(categoryTypeDto -> {
                 if(null != categoryTypeDto.getId()){
                     Optional<CategoryType> categoryType = existing.stream().filter(t -> t.getId().equals(categoryTypeDto.getId())).findFirst();
                     CategoryType categoryType1= categoryType.get();

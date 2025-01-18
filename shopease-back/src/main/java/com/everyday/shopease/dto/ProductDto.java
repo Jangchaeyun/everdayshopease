@@ -19,8 +19,8 @@ public class ProductDto {
     private String description;
     private BigDecimal price;
     private String brand;
-    private Float rating;
     private boolean isNewArrival;
+    private Float rating;
     private UUID categoryId;
     private String thumbnail;
     private String slug;

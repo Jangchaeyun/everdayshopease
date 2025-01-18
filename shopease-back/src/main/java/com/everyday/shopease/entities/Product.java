@@ -8,7 +8,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
-import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -19,14 +18,14 @@ import java.util.UUID;
 @AllArgsConstructor
 @Builder
 public class Product {
-    @Column
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue
     private UUID id;
 
-    @Column
+    @Column(nullable = false)
     private String name;
 
+    @Column
     private String description;
 
     @Column(nullable = false)
@@ -41,27 +40,27 @@ public class Product {
     @Column(nullable = false)
     private boolean isNewArrival;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false,unique = true)
     private String slug;
 
     @Column(nullable = false, updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
-    private Date createdAt;
+    private java.util.Date createdAt;
 
     @Column(nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
-    private Date updatedAt;
+    private java.util.Date updatedAt;
 
-    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "product",cascade = CascadeType.ALL)
     private List<ProductVariant> productVariants;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "category_id", nullable = false)
+    @JoinColumn(name = "category_id",nullable = false)
     @JsonIgnore
     private Category category;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "categoryType_id", nullable = false)
+    @JoinColumn(name = "categoryType_id",nullable = false)
     @JsonIgnore
     private CategoryType categoryType;
 
@@ -70,12 +69,12 @@ public class Product {
 
     @PrePersist
     protected void onCreate() {
-        createdAt = new Date();
+        createdAt = new java.util.Date();
         updatedAt = createdAt;
     }
 
     @PreUpdate
     protected void onUpdate() {
-        updatedAt = new Date();
+        updatedAt = new java.util.Date();
     }
 }
