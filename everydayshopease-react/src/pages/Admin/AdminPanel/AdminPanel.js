@@ -4,6 +4,7 @@ import simpleRestProvider from "ra-data-simple-rest";
 import ProductList from "./ProductList";
 import EditProduct from "./EditProduct";
 import CreateProduct from "./CreateProduct";
+import CategoryList from "./Category/CategoryList";
 
 const httpClient = (url, options = {}) => {
   const token = localStorage.getItem("authToken");
@@ -26,6 +27,7 @@ const AdminPanel = () => {
         edit={EditProduct}
         create={CreateProduct}
       />
+      <Resource name="category" list={CategoryList}  />
     </Admin>
   );
 };
