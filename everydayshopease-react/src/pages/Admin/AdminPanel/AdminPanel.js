@@ -1,10 +1,16 @@
 import React from "react";
-import { Admin, fetchUtils, Resource } from "react-admin";
+import {
+  Admin,
+  fetchUtils,
+  Resource,
+  withLifecycleCallbacks,
+} from "react-admin";
 import simpleRestProvider from "ra-data-simple-rest";
 import ProductList from "./ProductList";
 import EditProduct from "./EditProduct";
 import CreateProduct from "./CreateProduct";
 import CategoryList from "./Category/CategoryList";
+import CategoryEdit from "./Category/CategoryEdit";
 
 const httpClient = (url, options = {}) => {
   const token = localStorage.getItem("authToken");
@@ -13,9 +19,19 @@ const httpClient = (url, options = {}) => {
   return fetchUtils.fetchJson(url, options);
 };
 
-const dataProvider = simpleRestProvider(
-  "http://localhost:8080/api",
-  httpClient
+const dataProvider = withLifecycleCallbacks(
+  simpleRestProvider("http://localhost:8080/api", httpClient),
+  [
+    {
+      resource: "products",
+      beforeCreate: async (params, dataProvider) => {
+        console.log("Params ", params);
+        const url = "";
+        const formData = new FormData();
+        return {};
+      },
+    },
+  ]
 );
 
 const AdminPanel = () => {
@@ -27,7 +43,7 @@ const AdminPanel = () => {
         edit={EditProduct}
         create={CreateProduct}
       />
-      <Resource name="category" list={CategoryList}  />
+      <Resource name="category" list={CategoryList} edit={CategoryEdit} />
     </Admin>
   );
 };
