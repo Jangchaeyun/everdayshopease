@@ -11,6 +11,9 @@ import EditProduct from "./EditProduct";
 import CreateProduct from "./CreateProduct";
 import CategoryList from "./Category/CategoryList";
 import CategoryEdit from "./Category/CategoryEdit";
+import { fileUploadAPI } from "../../../api/fileUpload";
+
+const CDN_URL = "https://codedev.b-cdn.net"
 
 const httpClient = (url, options = {}) => {
   const token = localStorage.getItem("authToken");
@@ -26,8 +29,22 @@ const dataProvider = withLifecycleCallbacks(
       resource: "products",
       beforeCreate: async (params, dataProvider) => {
         console.log("Params ", params);
+        let requestBody = {
+          ...params,
+        };
+        const fileName = params?.data?.thumbnail?.rawFile?.name?.replaceAll(
+          " ",
+          "-"
+        );
         const url = "";
         const formData = new FormData();
+        formData.append("file", params?.data?.thumbnail?.rawFile);
+        formData.append("fileName", fileName);
+
+        const thumbnailResponse = await fileUploadAPI(formData);
+        requestBody.thumbnail = CDN_URL + "/" + fileName;
+
+        console.log("Params ", params, formData);
         return {};
       },
     },
