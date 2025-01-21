@@ -6,7 +6,10 @@ export const fileUploadAPI = async (data) => {
   try {
     const response = await axios(url, {
       method: "POST",
-      headers: getHeaders(),
+      headers: {
+        ...getHeaders(),
+        "Content-Type": "multipart/form-data",
+      },
       data: data,
     });
     return response?.data;

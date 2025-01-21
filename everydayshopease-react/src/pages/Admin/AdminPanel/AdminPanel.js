@@ -13,7 +13,7 @@ import CategoryList from "./Category/CategoryList";
 import CategoryEdit from "./Category/CategoryEdit";
 import { fileUploadAPI } from "../../../api/fileUpload";
 
-const CDN_URL = "https://codedev.b-cdn.net"
+const CDN_URL = "https://everdayshopease.b-cdn.net";
 
 const httpClient = (url, options = {}) => {
   const token = localStorage.getItem("authToken");
@@ -27,25 +27,43 @@ const dataProvider = withLifecycleCallbacks(
   [
     {
       resource: "products",
-      beforeCreate: async (params, dataProvider) => {
+      beforeSave: async (params, dataProvider) => {
         console.log("Params ", params);
         let requestBody = {
           ...params,
         };
-        const fileName = params?.data?.thumbnail?.rawFile?.name?.replaceAll(
-          " ",
-          "-"
-        );
-        const url = "";
+        let productResList = params?.productResources ?? [];
+        const fileName = params?.thumbnail?.rawFile?.name?.replaceAll(" ", "-");
         const formData = new FormData();
-        formData.append("file", params?.data?.thumbnail?.rawFile);
+        formData.append("file", params?.thumbnail?.rawFile);
         formData.append("fileName", fileName);
 
         const thumbnailResponse = await fileUploadAPI(formData);
         requestBody.thumbnail = CDN_URL + "/" + fileName;
 
-        console.log("Params ", params, formData);
-        return {};
+        const newProductResList = await Promise.all(
+          productResList?.map(async (productResource) => {
+            const fileName = productResource?.url?.rawFile?.name?.replaceAll(
+              " ",
+              "-"
+            );
+            const formData = new FormData();
+            formData.append("file", productResource?.url?.rawFile);
+            formData.append("fileName", fileName);
+            const fileUploadRes = await fileUploadAPI(formData);
+            return {
+              ...productResource,
+              url: CDN_URL + "/" + fileName,
+            };
+          })
+        );
+        //console.log("Params ",params,fileName);
+        const request = {
+          ...requestBody,
+          productResources: newProductResList,
+        };
+        console.log("Request Body ", request);
+        return request;
       },
     },
   ]

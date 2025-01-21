@@ -50,13 +50,13 @@ const CreateProduct = () => {
         <TextInput source="name" validate={[required()]} />
         <TextInput source="slug" validate={[required()]} />
         <TextInput source="description" validate={[required()]} />
-        <NumberInput source="price" type="number" validate={[required()]} />
+        <NumberInput source="price" validate={[required()]} />
         <TextInput source="brand" validate={[required()]} />
         {/* Refer category fields */}
         <ReferenceInput source="categoryId" reference="category" />
         <CategoryTypeInput />
 
-        <ImageInput source="thumbnail" label={"섬네일"} validate={[required()]}>
+        <ImageInput source="thumbnail" label={"Thumbnail"}>
           <ImageField source="src" title="title" />
         </ImageInput>
 
@@ -68,14 +68,14 @@ const CreateProduct = () => {
               resettable
             />
             <SelectInput source="size" choices={sizeSelector} />
-            <NumberInput source="quantity" />
+            <NumberInput source="stockQuantity" />
           </SimpleFormIterator>
         </ArrayInput>
 
         <ArrayInput source="productResources">
           <SimpleFormIterator inline>
             <TextInput source="name" validate={[required()]} />
-            <ImageInput source="url" label={"제품 이미지"}>
+            <ImageInput source="url" label={"Product Image"}>
               <ImageField source="src" title="title" />
             </ImageInput>
             <SelectInput source="type" choices={["image"]} />
