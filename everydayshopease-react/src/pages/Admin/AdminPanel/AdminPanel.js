@@ -57,7 +57,7 @@ const dataProvider = withLifecycleCallbacks(
             };
           })
         );
-        //console.log("Params ",params,fileName);
+
         const request = {
           ...requestBody,
           productResources: newProductResList,
