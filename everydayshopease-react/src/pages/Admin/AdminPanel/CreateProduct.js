@@ -16,7 +16,7 @@ import {
 import CategoryTypeInput from "./Category/CategoryTypeInput";
 import { colorSeletor } from "../../../components/Filters/ColorFilter";
 
-const sizeSelector = [
+export const sizeSelector = [
   "S",
   "M",
   "L",
@@ -56,7 +56,7 @@ const CreateProduct = () => {
         <ReferenceInput source="categoryId" reference="category" />
         <CategoryTypeInput />
 
-        <ImageInput source="thumbnail" label={"Thumbnail"}>
+        <ImageInput source="thumbnail" label={"썸네일"}>
           <ImageField source="src" title="title" />
         </ImageInput>
 
@@ -75,7 +75,8 @@ const CreateProduct = () => {
         <ArrayInput source="productResources">
           <SimpleFormIterator inline>
             <TextInput source="name" validate={[required()]} />
-            <ImageInput source="url" label={"Product Image"}>
+            <ImageField source="url" src="url" />
+            <ImageInput source="url" label={"제품 이미지"}>
               <ImageField source="src" title="title" />
             </ImageInput>
             <SelectInput source="type" choices={["image"]} />
